@@ -1,1 +1,3 @@
 venv/*
+data/simple/*
+*/__pycache__/*
