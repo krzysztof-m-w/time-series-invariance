@@ -83,6 +83,7 @@ if __name__ == "__main__":
 
     random_changes = (np.random.random((RANDOM_CHANGES_NUMBER, 2)) - 0.5) * 2
     random_changes = np.concat([np.zeros((1, 2)), random_changes])
+    random_changes[:, 0] = 0
 
     for i in range(N):
         PARABOLAS_PATH = DESTINATION_PATH.joinpath(f"parabolas_{i}")
