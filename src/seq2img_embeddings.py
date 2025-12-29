@@ -46,6 +46,9 @@ def s2i_vector(
         _, _, Zxx = stft(a, nperseg=nperseg, noverlap=noverlap)
         images.append(np.abs(Zxx))
 
+    img_plain = np.tile(a, (len(a), 1))[np.newaxis, ...]
+    images.append(img_plain[0])
+
     vector = []
 
     for img in images:
@@ -57,7 +60,7 @@ def s2i_vector(
         m = cv2.moments(img)
         hu = cv2.HuMoments(m).flatten()
 
-        hu = np.sign(hu) * np.log1p(np.abs(hu))
+        # hu = np.sign(hu) * np.log1p(np.abs(hu))
 
         vector.extend(hu.tolist())
 
