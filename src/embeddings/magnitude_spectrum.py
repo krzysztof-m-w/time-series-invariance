@@ -53,3 +53,21 @@ def mfcc_features(x, fs, n_mfcc=13):
     mfcc = librosa.feature.mfcc(y=x, sr=fs, n_mfcc=n_mfcc, center=True)
     # common: average across frames
     return mfcc.mean(axis=1)
+
+
+def embedding_vector(x, fs, bands) -> tuple[np.ndarray, list[str]]:
+    """
+    Combines spectral centroid, band energy ratios, and MFCCs
+    into a single embedding vector.
+    """
+    centroid = spectral_centroid(x, fs)
+    names = ["spectral_centroid"]
+
+    band_ratios = band_energy_ratios(x, fs, bands)
+    names.extend([f"band_ratio_{i}" for i in range(len(bands))])
+
+    mfccs = mfcc_features(x, fs)
+    names.extend([f"mfcc_{i}" for i in range(len(mfccs))])
+
+    embedding = np.hstack(([centroid], band_ratios, mfccs))
+    return embedding, names
