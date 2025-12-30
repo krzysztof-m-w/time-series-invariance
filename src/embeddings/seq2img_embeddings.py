@@ -23,35 +23,44 @@ def s2i_vector(
     psi_parameters: list = [(64, 4, 64)],
     markov_bins: int = 32,
     stft_parameters: list = [(128, 64)],
-) -> np.ndarray:
+) -> tuple[np.ndarray, list[str]]:
     images = []
+    names = []
+    final_names = []
 
     for tau, m, bins in psi_parameters:
         img = phase_space_image(a, tau=tau, m=m, bins=bins)
         images.append(img)
+        names.append(f"PSI_tau{tau}_m{m}_bins{bins}")
 
     mtf = MarkovTransitionField(n_bins=markov_bins)
     images.append(mtf.fit_transform(a.reshape(1, -1))[0])
+    names.append(f"MTF_bins{markov_bins}")
 
     rp = RecurrencePlot()
     images.append(rp.fit_transform(a.reshape(1, -1))[0])
+    names.append("RP")
 
     gaf0 = GramianAngularField(method="summation")
     images.append(gaf0.fit_transform(a.reshape(1, -1))[0])
+    names.append("GAF_sum")
 
     gaf1 = GramianAngularField(method="difference")
     images.append(gaf1.fit_transform(a.reshape(1, -1))[0])
+    names.append("GAF_diff")
 
     for nperseg, noverlap in stft_parameters:
         _, _, Zxx = stft(a, nperseg=nperseg, noverlap=noverlap)
         images.append(np.abs(Zxx))
+        names.append(f"STFT_nperseg{nperseg}_noverlap{noverlap}")
 
     img_plain = np.tile(a, (len(a), 1))[np.newaxis, ...]
     images.append(img_plain[0])
+    names.append("Plain_Tile")
 
     vector = []
 
-    for img in images:
+    for i, img in enumerate(images):
         img = img.astype(np.float32)
 
         if img.ndim > 2:
@@ -63,8 +72,9 @@ def s2i_vector(
         # hu = np.sign(hu) * np.log1p(np.abs(hu))
 
         vector.extend(hu.tolist())
+        final_names.extend([f"{names[i]}_Hu{j+1}" for j in range(len(hu))])
 
     vector = np.array(vector)
     vector = np.nan_to_num(vector, nan=0.0)
 
-    return np.array(vector)
+    return np.array(vector), final_names

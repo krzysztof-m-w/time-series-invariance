@@ -82,8 +82,9 @@ if __name__ == "__main__":
     os.makedirs(DESTINATION_PATH, exist_ok=True)
 
     random_changes = (np.random.random((RANDOM_CHANGES_NUMBER, 2)) - 0.5) * 2
-    random_changes = np.concat([np.zeros((1, 2)), random_changes])
-    random_changes[:, 0] = 0
+    random_changes[0] = 0
+    random_changes[1, 0] = 0
+    random_changes[2, 1] = 0
 
     for i in range(N):
         PARABOLAS_PATH = DESTINATION_PATH.joinpath(f"parabolas_{i}")

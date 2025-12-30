@@ -1,0 +1,36 @@
+Zernike moments
+
+Fourier descriptors
+
+HOG/SIFT
+
+contour signatures
+
+area/perimeter/compactness
+
+
+magnitude spectrum (shape of energy across frequencies) — rotation analogue → phase removal
+spectral centroid (“brightness”)
+band energy ratios
+cepstral / MFCCs (hugely used in audio)
+
+Autocorrelation descriptors
+captures repetition and lag structure
+naturally shift-invariant
+robust to noise and local distortions
+
+Wavelet features
+multi-resolution (local + global)
+robust to noise
+good for non-stationary signals
+
+Shape-based time-series descriptors
+shapelets (discriminative subsequences)
+SAX (Symbolic Aggregate approXimation)
+PAA (Piecewise Aggregate Approximation)
+DTW features (Dynamic Time Warping distances to prototypes)
+
+Model-based descriptors
+AR/ARMA/ARIMA coefficients
+Hidden Markov Models
+simple regression slopes/segments
