@@ -1,5 +1,5 @@
 venv/*
-data/simple/*
+data/*
 .env
 .vscode/*
 __pycache__
