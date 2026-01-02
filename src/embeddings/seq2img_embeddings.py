@@ -23,10 +23,16 @@ def s2i_vector(
     psi_parameters: list = [(64, 4, 64)],
     markov_bins: int = 32,
     stft_parameters: list = [(128, 64)],
+    max_size: int = 10_000,  # to avoid memory overflow
+    log_values: bool = False,
 ) -> tuple[np.ndarray, list[str]]:
     images = []
     names = []
     final_names = []
+
+    if len(a) > max_size:
+        factor = len(a) // max_size
+        a = a[: len(a) // factor * factor].reshape(-1, factor).mean(axis=1)
 
     for tau, m, bins in psi_parameters:
         img = phase_space_image(a, tau=tau, m=m, bins=bins)
@@ -69,7 +75,8 @@ def s2i_vector(
         m = cv2.moments(img)
         hu = cv2.HuMoments(m).flatten()
 
-        # hu = np.sign(hu) * np.log1p(np.abs(hu))
+        if log_values:
+            hu = np.sign(hu) * np.log1p(np.abs(hu))
 
         vector.extend(hu.tolist())
         final_names.extend([f"{names[i]}_Hu{j+1}" for j in range(len(hu))])
