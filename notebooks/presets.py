@@ -1,4 +1,6 @@
 import os
-def set_cwd():
+
+
+def set_cwd(subdir: str = ""):
     project_root = os.getenv("PYTHONPATH")
-    os.chdir(project_root)
+    os.chdir(os.path.join(project_root, subdir))
