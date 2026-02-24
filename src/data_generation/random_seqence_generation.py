@@ -60,7 +60,9 @@ def make_dataset(n_signals=50, length=300, add_scale_shift=False):
 if __name__ == "__main__":
     import os
 
-    X = make_dataset(n_signals=100, length=400, add_scale_shift=True)
+    X = make_dataset(n_signals=100, length=4000, add_scale_shift=True)
+    X_3d = np.expand_dims(X, axis=-1)
 
     os.makedirs("data/random_sequences", exist_ok=True)
     np.save("data/random_sequences/random_sequences.npy", X)
+    np.save("data/random_sequences/random_sequences_3d.npy", X_3d)
