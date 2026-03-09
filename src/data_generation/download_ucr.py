@@ -1,9 +1,8 @@
 import os
-from sktime.datasets import load_UCR_UEA_dataset
+import numpy as np
+from aeon.datasets import load_classification
 
-# The 20 datasets identified in Kurbalija et al. (2011)
-# Note: some names have evolved slightly in the archive over time
-kurbalija_subset = [
+datasets = [
     "Adiac",
     "Fish",
     "SwedishLeaf",
@@ -27,25 +26,22 @@ kurbalija_subset = [
 ]
 
 
-def download_kurbalija_sets(data_dir="./data"):
-    if not os.path.exists(data_dir):
-        os.makedirs(data_dir)
+def download_sets(data_dir="./data"):
 
-    print(f"Starting download of {len(kurbalija_subset)} datasets...")
+    os.makedirs(data_dir, exist_ok=True)
 
-    for name in kurbalija_subset:
+    for name in datasets:
         try:
-            print(f"Downloading {name}...", end=" ")
-            # extract_path saves it locally so you don't have to re-download next time
-            X_train, y_train = load_UCR_UEA_dataset(
-                name=name, split="train", extract_path=data_dir, return_X_y=True
-            )
-            print("Done.")
+            print(f"Downloading {name}...")
+            X_train, y_train = load_classification(name, split="train")
+            X_test, y_test = load_classification(name, split="test")
+
+            X_merged = np.concatenate([X_train, X_test], axis=0)
+            y_merged = np.concatenate([y_train, y_test], axis=0)
+            np.savez(os.path.join(data_dir, f"{name}.npz"), X=X_merged, y=y_merged)
+            print("Done")
         except Exception as e:
-            print(
-                f"Failed. Check if '{name}' name is correct in the current UCR version."
-            )
+            print(f"{name} failed: {e}")
 
 
-if __name__ == "__main__":
-    download_kurbalija_sets()
+download_sets()

@@ -4,3 +4,5 @@ pyts==0.13.0
 librosa==0.11.0
 tslearn==0.7.0
 seaborn==0.13.2
+ipykernel
+aeon
