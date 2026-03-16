@@ -4,3 +4,4 @@ data/*
 .vscode/*
 __pycache__
 notebooks/evaluations/data/*
+notebooks/evaluations/embeddings/*

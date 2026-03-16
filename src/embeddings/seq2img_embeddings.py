@@ -25,6 +25,7 @@ def s2i_vector(
     stft_parameters: list = [(128, 64)],
     max_size: int = 10_000,  # to avoid memory overflow
     log_values: bool = False,
+    name: str = "",
 ) -> tuple[np.ndarray, list[str]]:
     images = []
     names = []
@@ -34,35 +35,41 @@ def s2i_vector(
         factor = len(a) // max_size
         a = a[: len(a) // factor * factor].reshape(-1, factor).mean(axis=1)
 
-    for tau, m, bins in psi_parameters:
-        img = phase_space_image(a, tau=tau, m=m, bins=bins)
-        images.append(img)
-        names.append(f"PSI_tau{tau}_m{m}_bins{bins}")
+    if name == "PSI":
+        for tau, m, bins in psi_parameters:
+            img = phase_space_image(a, tau=tau, m=m, bins=bins)
+            images.append(img)
+            names.append(f"PSI_tau{tau}_m{m}_bins{bins}")
 
-    mtf = MarkovTransitionField(n_bins=markov_bins)
-    images.append(mtf.fit_transform(a.reshape(1, -1))[0])
-    names.append(f"MTF_bins{markov_bins}")
+    if name == "MTF":
+        mtf = MarkovTransitionField(n_bins=markov_bins)
+        images.append(mtf.fit_transform(a.reshape(1, -1))[0])
+        names.append(f"MTF_bins{markov_bins}")
 
-    rp = RecurrencePlot()
-    images.append(rp.fit_transform(a.reshape(1, -1))[0])
-    names.append("RP")
+    if name == "RP":
+        rp = RecurrencePlot()
+        images.append(rp.fit_transform(a.reshape(1, -1))[0])
+        names.append("RP")
 
-    gaf0 = GramianAngularField(method="summation")
-    images.append(gaf0.fit_transform(a.reshape(1, -1))[0])
-    names.append("GAF_sum")
+    if name == "GAF":
+        gaf0 = GramianAngularField(method="summation")
+        images.append(gaf0.fit_transform(a.reshape(1, -1))[0])
+        names.append("GAF_sum")
 
-    gaf1 = GramianAngularField(method="difference")
-    images.append(gaf1.fit_transform(a.reshape(1, -1))[0])
-    names.append("GAF_diff")
+        gaf1 = GramianAngularField(method="difference")
+        images.append(gaf1.fit_transform(a.reshape(1, -1))[0])
+        names.append("GAF_diff")
 
-    for nperseg, noverlap in stft_parameters:
-        _, _, Zxx = stft(a, nperseg=nperseg, noverlap=noverlap)
-        images.append(np.abs(Zxx))
-        names.append(f"STFT_nperseg{nperseg}_noverlap{noverlap}")
+    if name == "STFT":
+        for nperseg, noverlap in stft_parameters:
+            _, _, Zxx = stft(a, nperseg=nperseg, noverlap=noverlap)
+            images.append(np.abs(Zxx))
+            names.append(f"STFT_nperseg{nperseg}_noverlap{noverlap}")
 
-    img_plain = np.tile(a, (len(a), 1))[np.newaxis, ...]
-    images.append(img_plain[0])
-    names.append("Plain_Tile")
+    if name == "Plain_Tile":
+        img_plain = np.tile(a, (len(a), 1))[np.newaxis, ...]
+        images.append(img_plain[0])
+        names.append("Plain_Tile")
 
     vector = []
 

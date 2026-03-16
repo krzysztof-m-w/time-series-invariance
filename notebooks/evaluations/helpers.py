@@ -1,16 +1,13 @@
-from matplotlib import pyplot as plt
-import numpy as np
-import seaborn as sns
-from sklearn.metrics import silhouette_score
-
 from src.data_generation.simple_data_generation import (
     shift_time_series,
     shrunk_time_series,
 )
 
+import numpy as np
+
 
 def grouped_bars(
-    data, labels=None, series_labels=None, width=0.8, logarithmic_scale=True
+    data, labels=None, series_labels=None, width=0.8, logarithmic_scale=True, ax=None
 ):
     """
     data: 2D array-like shaped (n_series, n_categories)
@@ -18,7 +15,11 @@ def grouped_bars(
     series_labels: legend labels for each series (length n_series)
     width: total width of each group
     logarithmic_scale: if True, use logarithmic y-axis
+    ax: matplotlib axis object
     """
+    if ax is None:
+        _, ax = plt.subplots()
+
     data = np.asarray(data)
     n_series, n_cat = data.shape
 
@@ -33,7 +34,7 @@ def grouped_bars(
     data_clipped = np.where(inf_mask, finite_max, data)
 
     for i in range(n_series):
-        bars = plt.bar(
+        bars = ax.bar(
             x + (i - n_series / 2) * bar_w + bar_w / 2,
             data_clipped[i],
             width=bar_w,
@@ -48,29 +49,32 @@ def grouped_bars(
                 bar.set_edgecolor("red")
 
     if labels is not None:
-        plt.xticks(x, labels)
+        ax.set_xticks(x)
+        ax.set_xticklabels(labels)
 
     if series_labels is not None:
-        plt.legend()
+        ax.legend()
 
     # Apply logarithmic scale if requested
     if logarithmic_scale:
-        plt.yscale("log")
+        ax.set_yscale("log")
 
-    plt.tight_layout()
+    return ax
 
 
-def test_embeddings_quality(embeddings):
+def test_embeddings_quality(embeddings, dataset_name="", ax=None):
+    if ax is None:
+        _, ax = plt.subplots(ncols=2, figsize=(12, 5))
+    result_dict = {
+        "dataset_name": dataset_name,
+    }
+
     stds_local = np.std(embeddings, axis=1)
-
     stds_global = np.std(embeddings, axis=(0, 1))
-
     data = np.vstack([stds_global, np.mean(stds_local, axis=0)])
 
-    grouped_bars(data, series_labels=["global", "local"])
-
-    plt.title("Local std vs global std")
-    plt.show()
+    grouped_bars(data, series_labels=["global", "local"], ax=ax[0])
+    ax[0].set_title("Local std vs global std")
 
     X = embeddings
 
@@ -87,8 +91,7 @@ def test_embeddings_quality(embeddings):
     mean_cos_sim = np.mean(cos_sim_global, axis=(2, 3))
 
     sns.heatmap(mean_cos_sim)
-    plt.title("cosine similarity between vector groups")
-    plt.show()
+    ax[1].set_title("cosine similarity between vector groups")
 
     glob_cos_sim = np.mean(mean_cos_sim)
     mask = np.eye(mean_cos_sim.shape[0]).astype(np.bool)
@@ -96,13 +99,24 @@ def test_embeddings_quality(embeddings):
     print(
         f"Global cos similarity: {glob_cos_sim}, Local cos similarity: {local_cos_sim}"
     )
+    result_dict["global_cos_sim"] = glob_cos_sim
+    result_dict["local_cos_sim"] = local_cos_sim
+
     embedding_flattened = embeddings.reshape((-1, embeddings.shape[-1]))
     labels = np.repeat(np.arange(embeddings.shape[0]), embeddings.shape[1])
 
     sil_score_cos = silhouette_score(embedding_flattened, labels, metric="cosine")
     print(f"Silhouette score cosine: {sil_score_cos}")
+    result_dict["silhouette_score_cosine"] = sil_score_cos
+
     sil_score_cos = silhouette_score(embedding_flattened, labels, metric="euclidean")
     print(f"Silhouette score euclidean: {sil_score_cos}")
+    result_dict["silhouette_score_euclidean"] = sil_score_cos
+
+    result_dict["slihouette_score_max"] = max(
+        result_dict["silhouette_score_cosine"],
+        result_dict["silhouette_score_euclidean"],
+    )
 
     mu_intra = np.mean(cos_sim_local)
     mu_inter = np.mean(cos_sim_global)
@@ -111,10 +125,14 @@ def test_embeddings_quality(embeddings):
 
     FDR = (mu_intra - mu_inter) ** 2 / (sigma_intra**2 + sigma_inter**2)
     print("Fisher Discriminant Ratio (FDR):", FDR)
+    result_dict["FDR"] = FDR
 
     s_pooled = np.sqrt((sigma_intra**2 + sigma_inter**2) / 2)
     cohen_d = (mu_intra - mu_inter) / s_pooled
     print("Cohen's d:", cohen_d)
+    result_dict["cohen_d"] = cohen_d
+
+    return ax, result_dict
 
 
 def apply_embedding_function_shifts(
@@ -147,3 +165,15 @@ def apply_embedding_function_shrunk(
 
         all_embedding_vectors.append(embedding_vectors)
     return np.array(all_embedding_vectors)
+
+
+def load_dataset(dataset_name):
+    data_path = f"data/datasets/{dataset_name}.npz"
+    data = np.load(data_path)
+    return data["X"]
+
+
+def load_distortions(dataset_name, distortion_type):
+    data_path = f"data/distortions/{distortion_type}/{dataset_name}.npy"
+    data = np.load(data_path)
+    return data

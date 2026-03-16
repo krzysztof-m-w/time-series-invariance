@@ -1,0 +1,2066 @@
+{
+    "1d_moments": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.4686032016346891,
+            "local_cos_sim": 0.966542205986053,
+            "silhouette_score_cosine": -0.6587568041288809,
+            "silhouette_score_euclidean": -0.45581919875805543,
+            "slihouette_score_max": -0.45581919875805543,
+            "FDR": 0.7149526570638667,
+            "cohen_d": 1.1957864835026917
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.5276721514527152,
+            "local_cos_sim": 0.9589541193305492,
+            "silhouette_score_cosine": -0.6711630104863802,
+            "silhouette_score_euclidean": -0.4454091738221785,
+            "slihouette_score_max": -0.4454091738221785,
+            "FDR": 0.7137485150633538,
+            "cohen_d": 1.1947790716809144
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9517865209234515,
+            "local_cos_sim": 0.9887695383918917,
+            "silhouette_score_cosine": -0.6275585524776719,
+            "silhouette_score_euclidean": -0.37055466490814637,
+            "slihouette_score_max": -0.37055466490814637,
+            "FDR": 0.09853040036317255,
+            "cohen_d": 0.44391530805587803
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9678296660992135,
+            "local_cos_sim": 0.9853708145999174,
+            "silhouette_score_cosine": -0.5975939735746139,
+            "silhouette_score_euclidean": -0.368885995879658,
+            "slihouette_score_max": -0.368885995879658,
+            "FDR": 0.0765890095119093,
+            "cohen_d": 0.39137963542297216
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7040051010900334,
+            "local_cos_sim": 0.881574800866131,
+            "silhouette_score_cosine": -0.8434378580501375,
+            "silhouette_score_euclidean": -0.6174376417694785,
+            "slihouette_score_max": -0.6174376417694785,
+            "FDR": 0.07653302974945998,
+            "cohen_d": 0.39123657740415835
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.4421261414129466,
+            "local_cos_sim": 0.8878466101368633,
+            "silhouette_score_cosine": -0.640242371931314,
+            "silhouette_score_euclidean": -0.3982862131483298,
+            "slihouette_score_max": -0.3982862131483298,
+            "FDR": 0.5718875653007346,
+            "cohen_d": 1.0694742309197867
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8484273629089946,
+            "local_cos_sim": 0.9879952791756327,
+            "silhouette_score_cosine": -0.6697833627941747,
+            "silhouette_score_euclidean": -0.4593127826312154,
+            "slihouette_score_max": -0.4593127826312154,
+            "FDR": 0.19320184761001674,
+            "cohen_d": 0.6216137830035894
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.5068589508734722,
+            "local_cos_sim": 0.8330030151363683,
+            "silhouette_score_cosine": -0.8183150980820579,
+            "silhouette_score_euclidean": -0.586611955702329,
+            "slihouette_score_max": -0.586611955702329,
+            "FDR": 0.25052737273809167,
+            "cohen_d": 0.7078522059555817
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7311555490555238,
+            "local_cos_sim": 0.9602875081364266,
+            "silhouette_score_cosine": -0.7591320654744057,
+            "silhouette_score_euclidean": -0.4721261091893873,
+            "slihouette_score_max": -0.4721261091893873,
+            "FDR": 0.5306212653299627,
+            "cohen_d": 1.0301662636001654
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.593490520506184,
+            "local_cos_sim": 0.8915862721559534,
+            "silhouette_score_cosine": -0.6542931442376013,
+            "silhouette_score_euclidean": -0.3957082227843629,
+            "slihouette_score_max": -0.3957082227843629,
+            "FDR": 0.20775623090543377,
+            "cohen_d": 0.6446025611265189
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.35959164877930716,
+            "local_cos_sim": 0.9318126124122306,
+            "silhouette_score_cosine": -0.6305494677546217,
+            "silhouette_score_euclidean": -0.540781243858716,
+            "slihouette_score_max": -0.540781243858716,
+            "FDR": 0.4948516635165023,
+            "cohen_d": 0.9948383421606771
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.4789721809826483,
+            "local_cos_sim": 0.9028354830054856,
+            "silhouette_score_cosine": -0.3848786407850483,
+            "silhouette_score_euclidean": -0.4473222193078199,
+            "slihouette_score_max": -0.3848786407850483,
+            "FDR": 0.4215979963624649,
+            "cohen_d": 0.91825704066178
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.4335161260971581,
+            "local_cos_sim": 0.9548739641447367,
+            "silhouette_score_cosine": -0.5140802476858942,
+            "silhouette_score_euclidean": -0.38084605617227435,
+            "slihouette_score_max": -0.38084605617227435,
+            "FDR": 0.8219356529126035,
+            "cohen_d": 1.2821354475347786
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9136294116026705,
+            "local_cos_sim": 0.9595704031198131,
+            "silhouette_score_cosine": -0.8088496981998518,
+            "silhouette_score_euclidean": -0.5601059588590613,
+            "slihouette_score_max": -0.5601059588590613,
+            "FDR": 0.1169216391934712,
+            "cohen_d": 0.4835734467347669
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8013598406181162,
+            "local_cos_sim": 0.8293796472608197,
+            "silhouette_score_cosine": -0.6263530047954592,
+            "silhouette_score_euclidean": -0.3337683897655995,
+            "slihouette_score_max": -0.3337683897655995,
+            "FDR": 0.006148903483343796,
+            "cohen_d": 0.11089547766562709
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9994714478806302,
+            "local_cos_sim": 0.9994719318463556,
+            "silhouette_score_cosine": -0.21640633712137713,
+            "silhouette_score_euclidean": -0.18230210556907553,
+            "slihouette_score_max": -0.18230210556907553,
+            "FDR": 3.3262436155221277e-07,
+            "cohen_d": 0.0008156278091779519
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.3394659899912496,
+            "local_cos_sim": 0.5002029488584371,
+            "silhouette_score_cosine": -0.8793054945326859,
+            "silhouette_score_euclidean": -0.6321967445607672,
+            "slihouette_score_max": -0.6321967445607672,
+            "FDR": 0.02963700764393419,
+            "cohen_d": 0.2434625541800389
+        }
+    },
+    "simple_embedding_vector": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9809154927818948,
+            "local_cos_sim": 0.9969646694230205,
+            "silhouette_score_cosine": -0.3962436499527534,
+            "silhouette_score_euclidean": -0.1679047617259502,
+            "slihouette_score_max": -0.1679047617259502,
+            "FDR": 0.6706325910079025,
+            "cohen_d": 1.1581300367470853
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9914066501125187,
+            "local_cos_sim": 0.9990833640737501,
+            "silhouette_score_cosine": -0.17091242957242675,
+            "silhouette_score_euclidean": 0.07057595541886925,
+            "slihouette_score_max": 0.07057595541886925,
+            "FDR": 0.9094800879486836,
+            "cohen_d": 1.3486883168091015
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9977519011576294,
+            "local_cos_sim": 0.9993670062427357,
+            "silhouette_score_cosine": -0.3583760299494059,
+            "silhouette_score_euclidean": -0.1751722784999703,
+            "slihouette_score_max": -0.1751722784999703,
+            "FDR": 0.3221742295001362,
+            "cohen_d": 0.8027131860137048
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9976974696351456,
+            "local_cos_sim": 0.9991670313408483,
+            "silhouette_score_cosine": -0.39727107653575106,
+            "silhouette_score_euclidean": -0.18377058352880155,
+            "slihouette_score_max": -0.18377058352880155,
+            "FDR": 0.01610887153701328,
+            "cohen_d": 0.17949301678345755
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8873049361387885,
+            "local_cos_sim": 0.9155735761636884,
+            "silhouette_score_cosine": -0.6552111954463707,
+            "silhouette_score_euclidean": -0.4784158695324944,
+            "slihouette_score_max": -0.4784158695324944,
+            "FDR": 0.019339926129220333,
+            "cohen_d": 0.19667194069932972
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.909006992922783,
+            "local_cos_sim": 0.9891304175297225,
+            "silhouette_score_cosine": -0.38790068413319634,
+            "silhouette_score_euclidean": -0.17393999362962598,
+            "slihouette_score_max": -0.17393999362962598,
+            "FDR": 0.7144540777592878,
+            "cohen_d": 1.1953694640229753
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9898131238321525,
+            "local_cos_sim": 0.999460237184866,
+            "silhouette_score_cosine": -0.20087048248271427,
+            "silhouette_score_euclidean": 0.04525161786066167,
+            "slihouette_score_max": 0.04525161786066167,
+            "FDR": 0.8494694714522589,
+            "cohen_d": 1.3034335207077183
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9863690671665818,
+            "local_cos_sim": 0.9952508849295395,
+            "silhouette_score_cosine": -0.5825447623517132,
+            "silhouette_score_euclidean": -0.3084019629342115,
+            "slihouette_score_max": -0.3084019629342115,
+            "FDR": 0.15411592621975864,
+            "cohen_d": 0.5551863222734483
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9863198153123031,
+            "local_cos_sim": 0.9975956208632064,
+            "silhouette_score_cosine": -0.2757495010763949,
+            "silhouette_score_euclidean": -0.08768393779638772,
+            "slihouette_score_max": -0.08768393779638772,
+            "FDR": 0.8012192114751588,
+            "cohen_d": 1.2658745684112298
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9918079865784353,
+            "local_cos_sim": 0.9974293396310365,
+            "silhouette_score_cosine": -0.4127687981423512,
+            "silhouette_score_euclidean": -0.0858821723090161,
+            "slihouette_score_max": -0.0858821723090161,
+            "FDR": 0.23394714886723203,
+            "cohen_d": 0.6840279948470414
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9205824710897692,
+            "local_cos_sim": 0.9650987246478997,
+            "silhouette_score_cosine": -0.4740010205711269,
+            "silhouette_score_euclidean": -0.29262560458493103,
+            "slihouette_score_max": -0.29262560458493103,
+            "FDR": 0.207672118214639,
+            "cohen_d": 0.6444720602394474
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9799277168763026,
+            "local_cos_sim": 0.9917284928586058,
+            "silhouette_score_cosine": -0.28204095286957576,
+            "silhouette_score_euclidean": -0.06319573832488003,
+            "slihouette_score_max": -0.06319573832488003,
+            "FDR": 0.16481883755239118,
+            "cohen_d": 0.5741408147003506
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9451180020333362,
+            "local_cos_sim": 0.9918295198471767,
+            "silhouette_score_cosine": -0.4690482074520863,
+            "silhouette_score_euclidean": -0.23863605788307485,
+            "slihouette_score_max": -0.23863605788307485,
+            "FDR": 0.6292453841290995,
+            "cohen_d": 1.1218247493517868
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.976110164110986,
+            "local_cos_sim": 0.9892749975809966,
+            "silhouette_score_cosine": -0.7113367542447735,
+            "silhouette_score_euclidean": -0.4539796705424009,
+            "slihouette_score_max": -0.4539796705424009,
+            "FDR": 0.10354791153529065,
+            "cohen_d": 0.4550778208950435
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.992291061888506,
+            "local_cos_sim": 0.9931252096686553,
+            "silhouette_score_cosine": -0.3846342853782335,
+            "silhouette_score_euclidean": -0.19659806006087746,
+            "slihouette_score_max": -0.19659806006087746,
+            "FDR": 0.008629774328395954,
+            "cohen_d": 0.13137560145168473
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9982216402142959,
+            "local_cos_sim": 0.9982244720354068,
+            "silhouette_score_cosine": -0.19984824071702267,
+            "silhouette_score_euclidean": -0.17307834683969558,
+            "slihouette_score_max": -0.17307834683969558,
+            "FDR": 1.235361923489944e-06,
+            "cohen_d": 0.0015718536340829856
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9668969487018394,
+            "local_cos_sim": 0.9780070556781933,
+            "silhouette_score_cosine": -0.7259831932874942,
+            "silhouette_score_euclidean": -0.3992851215382103,
+            "slihouette_score_max": -0.3992851215382103,
+            "FDR": 0.06697125159535233,
+            "cohen_d": 0.3659815612714726
+        }
+    },
+    "band_energy_ratios": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9973494292463226,
+            "local_cos_sim": 0.9994237040024452,
+            "silhouette_score_cosine": -0.38837319793579533,
+            "silhouette_score_euclidean": -0.2828162259838476,
+            "slihouette_score_max": -0.2828162259838476,
+            "FDR": 0.20180540027478716,
+            "cohen_d": 0.6353037073318354
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999792432879935,
+            "local_cos_sim": 0.9999902841255994,
+            "silhouette_score_cosine": -0.7632218819847083,
+            "silhouette_score_euclidean": -0.6386232885795603,
+            "slihouette_score_max": -0.6386232885795603,
+            "FDR": 0.0644098305559195,
+            "cohen_d": 0.3589145596264367
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999658125299684,
+            "local_cos_sim": 0.9999690279914858,
+            "silhouette_score_cosine": -0.6787210303283873,
+            "silhouette_score_euclidean": -0.536879838698341,
+            "slihouette_score_max": -0.536879838698341,
+            "FDR": 0.003071602162259201,
+            "cohen_d": 0.07837859608667663
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9998414402441087,
+            "local_cos_sim": 0.9999407133979942,
+            "silhouette_score_cosine": -0.48553442274140124,
+            "silhouette_score_euclidean": -0.401827380793447,
+            "slihouette_score_max": -0.401827380793447,
+            "FDR": 0.0012176650047530954,
+            "cohen_d": 0.049349062904032855
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9846469819594221,
+            "local_cos_sim": 0.9944979286212215,
+            "silhouette_score_cosine": -0.7831686431514342,
+            "silhouette_score_euclidean": -0.6160965449221033,
+            "slihouette_score_max": -0.6160965449221033,
+            "FDR": 0.051750486051894,
+            "cohen_d": 0.32171566965845483
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9848767133094307,
+            "local_cos_sim": 0.9976615836635014,
+            "silhouette_score_cosine": -0.6476989599283813,
+            "silhouette_score_euclidean": -0.5081388038168652,
+            "slihouette_score_max": -0.5081388038168652,
+            "FDR": 0.059996362806913575,
+            "cohen_d": 0.34639966168261066
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9995467710140069,
+            "local_cos_sim": 0.9998904084140398,
+            "silhouette_score_cosine": -0.740421215770838,
+            "silhouette_score_euclidean": -0.556782608812168,
+            "slihouette_score_max": -0.556782608812168,
+            "FDR": 0.05232234458805442,
+            "cohen_d": 0.3234883138169119
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9316339526188998,
+            "local_cos_sim": 0.992234174159815,
+            "silhouette_score_cosine": -0.7333543413569864,
+            "silhouette_score_euclidean": -0.5417988773065758,
+            "slihouette_score_max": -0.5417988773065758,
+            "FDR": 0.3482968756939707,
+            "cohen_d": 0.8346219212241801
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8393899686071778,
+            "local_cos_sim": 0.9942064815616558,
+            "silhouette_score_cosine": -0.33169323959867636,
+            "silhouette_score_euclidean": -0.22517990285479528,
+            "slihouette_score_max": -0.22517990285479528,
+            "FDR": 0.47748246588487425,
+            "cohen_d": 0.9772230716523984
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9995062350904921,
+            "local_cos_sim": 0.9997486025499922,
+            "silhouette_score_cosine": -0.6398895594991929,
+            "silhouette_score_euclidean": -0.4888205505869635,
+            "slihouette_score_max": -0.4888205505869635,
+            "FDR": 0.040857647914317875,
+            "cohen_d": 0.28585887397216786
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999101601760091,
+            "local_cos_sim": 0.9999889797148935,
+            "silhouette_score_cosine": -0.4879497702872612,
+            "silhouette_score_euclidean": -0.36428133972026,
+            "slihouette_score_max": -0.36428133972026,
+            "FDR": 0.19604579434926764,
+            "cohen_d": 0.6261721717695024
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999981259043645,
+            "local_cos_sim": 0.999999133527139,
+            "silhouette_score_cosine": -0.6167296289163086,
+            "silhouette_score_euclidean": -0.4465161674038145,
+            "slihouette_score_max": -0.4465161674038145,
+            "FDR": 0.07987219863859797,
+            "cohen_d": 0.39968036889143804
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999820458883527,
+            "local_cos_sim": 0.9999927465941605,
+            "silhouette_score_cosine": -0.5349204490276349,
+            "silhouette_score_euclidean": -0.4733825073234428,
+            "slihouette_score_max": -0.4733825073234428,
+            "FDR": 0.04928618396371815,
+            "cohen_d": 0.31396236705604746
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9987061120063206,
+            "local_cos_sim": 0.9995967734790099,
+            "silhouette_score_cosine": -0.6097982366457391,
+            "silhouette_score_euclidean": -0.45817860909280717,
+            "slihouette_score_max": -0.45817860909280717,
+            "FDR": 0.22399444539635893,
+            "cohen_d": 0.6693197223993312
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999903878805834,
+            "local_cos_sim": 0.9999906704820228,
+            "silhouette_score_cosine": -0.47577661642214897,
+            "silhouette_score_euclidean": -0.3074928552923424,
+            "slihouette_score_max": -0.3074928552923424,
+            "FDR": 0.00020240788631569883,
+            "cohen_d": 0.020120034111089313
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999998645843164,
+            "local_cos_sim": 0.9999998646177792,
+            "silhouette_score_cosine": -0.20640102696760892,
+            "silhouette_score_euclidean": -0.1843255544751301,
+            "slihouette_score_max": -0.1843255544751301,
+            "FDR": 2.480530401086337e-08,
+            "cohen_d": 0.0002227343889517888
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9978707834551833,
+            "local_cos_sim": 0.9988556879067666,
+            "silhouette_score_cosine": -0.6470535990194177,
+            "silhouette_score_euclidean": -0.4733644028392851,
+            "slihouette_score_max": -0.4733644028392851,
+            "FDR": 0.023315740416420552,
+            "cohen_d": 0.2159432352097215
+        }
+    },
+    "mfcc_features": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9981537883015199,
+            "local_cos_sim": 0.9995891441172201,
+            "silhouette_score_cosine": 0.13462528566188722,
+            "silhouette_score_euclidean": 0.08971231298964225,
+            "slihouette_score_max": 0.13462528566188722,
+            "FDR": 1.8884966659483589,
+            "cohen_d": 1.943448824100269
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9973658790035824,
+            "local_cos_sim": 0.9992709196765003,
+            "silhouette_score_cosine": -0.5614604367772403,
+            "silhouette_score_euclidean": -0.42697087154447677,
+            "slihouette_score_max": -0.42697087154447677,
+            "FDR": 0.13214261339370212,
+            "cohen_d": 0.5140867891586053
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9997268699785222,
+            "local_cos_sim": 0.999888190410099,
+            "silhouette_score_cosine": -0.45745197815269073,
+            "silhouette_score_euclidean": -0.36108199003070846,
+            "slihouette_score_max": -0.36108199003070846,
+            "FDR": 0.0757797133708017,
+            "cohen_d": 0.38930634048471824
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9997935795612558,
+            "local_cos_sim": 0.9998405360632111,
+            "silhouette_score_cosine": -0.600388486331515,
+            "silhouette_score_euclidean": -0.4641526758372131,
+            "slihouette_score_max": -0.4641526758372131,
+            "FDR": 0.0014451968559983934,
+            "cohen_d": 0.05376238194124947
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9884473658095226,
+            "local_cos_sim": 0.9964611569269143,
+            "silhouette_score_cosine": -0.5377551830861512,
+            "silhouette_score_euclidean": -0.31465558799981014,
+            "slihouette_score_max": -0.31465558799981014,
+            "FDR": 0.3645408045092709,
+            "cohen_d": 0.8538627577184414
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9972181537655723,
+            "local_cos_sim": 0.9991646937706641,
+            "silhouette_score_cosine": -0.3878692157668348,
+            "silhouette_score_euclidean": -0.20592534924735834,
+            "slihouette_score_max": -0.20592534924735834,
+            "FDR": 0.31335818557039535,
+            "cohen_d": 0.7916541992188197
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9986685581596719,
+            "local_cos_sim": 0.9997241202852961,
+            "silhouette_score_cosine": -0.20337308164523768,
+            "silhouette_score_euclidean": -0.08663178542074881,
+            "slihouette_score_max": -0.08663178542074881,
+            "FDR": 0.6986858029320265,
+            "cohen_d": 1.182104735572975
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9906473038557092,
+            "local_cos_sim": 0.9973796423118457,
+            "silhouette_score_cosine": -0.28423648189527995,
+            "silhouette_score_euclidean": -0.1282875427710741,
+            "slihouette_score_max": -0.1282875427710741,
+            "FDR": 0.4670159842647229,
+            "cohen_d": 0.9664532935064404
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9924530189565277,
+            "local_cos_sim": 0.9994242967380614,
+            "silhouette_score_cosine": 0.43612592280277884,
+            "silhouette_score_euclidean": 0.29184169087915085,
+            "slihouette_score_max": 0.43612592280277884,
+            "FDR": 2.6149066349429035,
+            "cohen_d": 2.2868784991524596
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9976108913340687,
+            "local_cos_sim": 0.9995832041129049,
+            "silhouette_score_cosine": 0.17240350207359453,
+            "silhouette_score_euclidean": 0.10294920439725344,
+            "slihouette_score_max": 0.17240350207359453,
+            "FDR": 1.3418326178960074,
+            "cohen_d": 1.6381896214394762
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9967149424156749,
+            "local_cos_sim": 0.99952294961485,
+            "silhouette_score_cosine": -0.15049333735962805,
+            "silhouette_score_euclidean": -0.08627210205647562,
+            "slihouette_score_max": -0.08627210205647562,
+            "FDR": 0.6138156958208276,
+            "cohen_d": 1.1079852849391345
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9975582141036463,
+            "local_cos_sim": 0.9988950698430634,
+            "silhouette_score_cosine": -0.431757964851739,
+            "silhouette_score_euclidean": -0.24950943709675366,
+            "slihouette_score_max": -0.24950943709675366,
+            "FDR": 0.0737826747111691,
+            "cohen_d": 0.3841423556734381
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9984099944975547,
+            "local_cos_sim": 0.9998686032689222,
+            "silhouette_score_cosine": -0.41032337026850446,
+            "silhouette_score_euclidean": -0.29409788966255174,
+            "slihouette_score_max": -0.29409788966255174,
+            "FDR": 0.27954888021156094,
+            "cohen_d": 0.7477284001715608
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.997953986678773,
+            "local_cos_sim": 0.9995221697925462,
+            "silhouette_score_cosine": -0.07175931501875242,
+            "silhouette_score_euclidean": -0.000137162066561532,
+            "slihouette_score_max": -0.000137162066561532,
+            "FDR": 1.4569865327015736,
+            "cohen_d": 1.7070363398015718
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9994367441447342,
+            "local_cos_sim": 0.9995300837161938,
+            "silhouette_score_cosine": -0.30776599999282456,
+            "silhouette_score_euclidean": -0.19783930821195908,
+            "slihouette_score_max": -0.19783930821195908,
+            "FDR": 0.014740917442449682,
+            "cohen_d": 0.17170275153560982
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9993490013371148,
+            "local_cos_sim": 0.9993507870325239,
+            "silhouette_score_cosine": -0.2551064038588603,
+            "silhouette_score_euclidean": -0.18791472947596924,
+            "slihouette_score_max": -0.18791472947596924,
+            "FDR": 3.422958297607889e-06,
+            "cohen_d": 0.0026164702549839503
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9908464554800112,
+            "local_cos_sim": 0.995851440877654,
+            "silhouette_score_cosine": -0.3292149564359493,
+            "silhouette_score_euclidean": -0.15409351938777754,
+            "slihouette_score_max": -0.15409351938777754,
+            "FDR": 0.32646324316810216,
+            "cohen_d": 0.8080386663620772
+        }
+    },
+    "seq2img_PSI": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6581367760293279,
+            "local_cos_sim": 0.8521039779274263,
+            "silhouette_score_cosine": -0.7000558182048175,
+            "silhouette_score_euclidean": -0.5017668150730883,
+            "slihouette_score_max": -0.5017668150730883,
+            "FDR": 0.20213733595387928,
+            "cohen_d": 0.6358259761190624
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8302361470239863,
+            "local_cos_sim": 0.9733310972400304,
+            "silhouette_score_cosine": -0.6133119094327826,
+            "silhouette_score_euclidean": -0.41176712019124034,
+            "slihouette_score_max": -0.41176712019124034,
+            "FDR": 0.32800136210700753,
+            "cohen_d": 0.8099399509926739
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7639190836203247,
+            "local_cos_sim": 0.9369285734594001,
+            "silhouette_score_cosine": -0.6851112124946287,
+            "silhouette_score_euclidean": -0.4679255825638614,
+            "slihouette_score_max": -0.4679255825638614,
+            "FDR": 0.3581510437630829,
+            "cohen_d": 0.8463463165431546
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8644534276241921,
+            "local_cos_sim": 0.9162084475110932,
+            "silhouette_score_cosine": -0.7648131446911477,
+            "silhouette_score_euclidean": -0.5484776362835393,
+            "slihouette_score_max": -0.5484776362835393,
+            "FDR": 0.04238622261698849,
+            "cohen_d": 0.2911570799997434
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.09137753028654044,
+            "local_cos_sim": 0.6202201112890031,
+            "silhouette_score_cosine": -0.7628421109676947,
+            "silhouette_score_euclidean": -0.5922231498983667,
+            "slihouette_score_max": -0.5922231498983667,
+            "FDR": 0.4367953752766787,
+            "cohen_d": 0.934660767633561
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.09552043987069063,
+            "local_cos_sim": 0.5705076863931164,
+            "silhouette_score_cosine": -0.83742116498282,
+            "silhouette_score_euclidean": -0.6095425790234075,
+            "slihouette_score_max": -0.6095425790234075,
+            "FDR": 0.2269414966296889,
+            "cohen_d": 0.6737083888889746
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6182809569094195,
+            "local_cos_sim": 0.8642907651600167,
+            "silhouette_score_cosine": -0.6405105428310248,
+            "silhouette_score_euclidean": -0.4678259520742008,
+            "slihouette_score_max": -0.4678259520742008,
+            "FDR": 0.4040334325184621,
+            "cohen_d": 0.8989253945889637
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8024855914169765,
+            "local_cos_sim": 0.9217818723117743,
+            "silhouette_score_cosine": -0.673244347564806,
+            "silhouette_score_euclidean": -0.4822124003349443,
+            "slihouette_score_max": -0.4822124003349443,
+            "FDR": 0.17460859533015818,
+            "cohen_d": 0.5909460133212816
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.521652766304474,
+            "local_cos_sim": 0.7766146889123579,
+            "silhouette_score_cosine": -0.6528877770196975,
+            "silhouette_score_euclidean": -0.5175684938766781,
+            "slihouette_score_max": -0.5175684938766781,
+            "FDR": 0.3192316750056061,
+            "cohen_d": 0.7990390165762947
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7475216540904037,
+            "local_cos_sim": 0.9385785932499177,
+            "silhouette_score_cosine": -0.5050361737536668,
+            "silhouette_score_euclidean": -0.3195755480393278,
+            "slihouette_score_max": -0.3195755480393278,
+            "FDR": 0.27738711422797824,
+            "cohen_d": 0.7448316779353281
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.47894582441731437,
+            "local_cos_sim": 0.8117790729388108,
+            "silhouette_score_cosine": -0.6476689005956079,
+            "silhouette_score_euclidean": -0.6523360896841655,
+            "slihouette_score_max": -0.6476689005956079,
+            "FDR": 0.27146480552899444,
+            "cohen_d": 0.7368375744069984
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.5734024368503878,
+            "local_cos_sim": 0.8711119061481636,
+            "silhouette_score_cosine": -0.20802955339085338,
+            "silhouette_score_euclidean": -0.5952338723059686,
+            "slihouette_score_max": -0.20802955339085338,
+            "FDR": 0.3817257508613804,
+            "cohen_d": 0.873757118267291
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6796916455617645,
+            "local_cos_sim": 0.7802941962885857,
+            "silhouette_score_cosine": -0.7550461413686105,
+            "silhouette_score_euclidean": -0.6657964634654779,
+            "slihouette_score_max": -0.6657964634654779,
+            "FDR": 0.02412280401037421,
+            "cohen_d": 0.21964882886268347
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.28290049530451133,
+            "local_cos_sim": 0.6115424035251653,
+            "silhouette_score_cosine": -0.7609807133696617,
+            "silhouette_score_euclidean": -0.5985221874120311,
+            "slihouette_score_max": -0.5985221874120311,
+            "FDR": 0.21144368836261035,
+            "cohen_d": 0.6502979138250565
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7436559540759424,
+            "local_cos_sim": 0.8041387419475013,
+            "silhouette_score_cosine": -0.5036714564510214,
+            "silhouette_score_euclidean": -0.7271487793137448,
+            "slihouette_score_max": -0.5036714564510214,
+            "FDR": 0.03661645920044466,
+            "cohen_d": 0.2706158132868242
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9963967726522137,
+            "local_cos_sim": 0.9971114007099113,
+            "silhouette_score_cosine": -0.36984472635329924,
+            "silhouette_score_euclidean": -0.31638955849405354,
+            "slihouette_score_max": -0.31638955849405354,
+            "FDR": 0.012861406035950219,
+            "cohen_d": 0.16038332853479642
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.30388419330109956,
+            "local_cos_sim": 0.5516472986946543,
+            "silhouette_score_cosine": -0.6965467354370977,
+            "silhouette_score_euclidean": -0.5415164930295441,
+            "slihouette_score_max": -0.5415164930295441,
+            "FDR": 0.13633741587046894,
+            "cohen_d": 0.5221827570314228
+        }
+    },
+    "seq2img_MTF": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6755944380580551,
+            "local_cos_sim": 0.8156933453364761,
+            "silhouette_score_cosine": -0.7521477982358019,
+            "silhouette_score_euclidean": -0.5685313882373187,
+            "slihouette_score_max": -0.5685313882373187,
+            "FDR": 0.184711496497909,
+            "cohen_d": 0.607801771135802
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9133886850159193,
+            "local_cos_sim": 0.9623153393080651,
+            "silhouette_score_cosine": -0.7343080007922099,
+            "silhouette_score_euclidean": -0.548654454161617,
+            "slihouette_score_max": -0.548654454161617,
+            "FDR": 0.09196795445748589,
+            "cohen_d": 0.42887749872775066
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9249857102276292,
+            "local_cos_sim": 0.970160056002633,
+            "silhouette_score_cosine": -0.6391278736867583,
+            "silhouette_score_euclidean": -0.4902552059173355,
+            "slihouette_score_max": -0.4902552059173355,
+            "FDR": 0.08973385543139835,
+            "cohen_d": 0.4236362954974428
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9052930530454949,
+            "local_cos_sim": 0.9332395274432844,
+            "silhouette_score_cosine": -0.6484399437671751,
+            "silhouette_score_euclidean": -0.527212393884701,
+            "slihouette_score_max": -0.527212393884701,
+            "FDR": 0.03430652637775046,
+            "cohen_d": 0.26194093371502847
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.851782096033875,
+            "local_cos_sim": 0.9369510211090191,
+            "silhouette_score_cosine": -0.713802831007434,
+            "silhouette_score_euclidean": -0.5284367121000155,
+            "slihouette_score_max": -0.5284367121000155,
+            "FDR": 0.1207284564583921,
+            "cohen_d": 0.4913826542693426
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8486761758617384,
+            "local_cos_sim": 0.9806046130233543,
+            "silhouette_score_cosine": -0.6454329551029929,
+            "silhouette_score_euclidean": -0.2924152011502986,
+            "slihouette_score_max": -0.2924152011502986,
+            "FDR": 0.2920964279954861,
+            "cohen_d": 0.7643250983651997
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8591573402988146,
+            "local_cos_sim": 0.9271227857364311,
+            "silhouette_score_cosine": -0.7076837818851136,
+            "silhouette_score_euclidean": -0.541203136334514,
+            "slihouette_score_max": -0.541203136334514,
+            "FDR": 0.10474823182240302,
+            "cohen_d": 0.45770783655603503
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8608252214472305,
+            "local_cos_sim": 0.934444141691743,
+            "silhouette_score_cosine": -0.7401173103743249,
+            "silhouette_score_euclidean": -0.5307069946612023,
+            "slihouette_score_max": -0.5307069946612023,
+            "FDR": 0.17354281723718387,
+            "cohen_d": 0.5891397410414339
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7877796945032266,
+            "local_cos_sim": 0.9260704790760644,
+            "silhouette_score_cosine": -0.6744035350105495,
+            "silhouette_score_euclidean": -0.46142452950458657,
+            "slihouette_score_max": -0.46142452950458657,
+            "FDR": 0.37566255744758337,
+            "cohen_d": 0.8667901215952837
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8666287876985455,
+            "local_cos_sim": 0.9560021586188127,
+            "silhouette_score_cosine": -0.5205500943602104,
+            "silhouette_score_euclidean": -0.3233904983268172,
+            "slihouette_score_max": -0.3233904983268172,
+            "FDR": 0.18603853149134864,
+            "cohen_d": 0.6099811988764058
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.5999879704911555,
+            "local_cos_sim": 0.878196334240915,
+            "silhouette_score_cosine": -0.6403227560856326,
+            "silhouette_score_euclidean": -0.4581531690949158,
+            "slihouette_score_max": -0.4581531690949158,
+            "FDR": 0.5363321889051905,
+            "cohen_d": 1.0356951181744467
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8340122101873958,
+            "local_cos_sim": 0.919573947619676,
+            "silhouette_score_cosine": -0.6016538621862599,
+            "silhouette_score_euclidean": -0.3559834991640056,
+            "slihouette_score_max": -0.3559834991640056,
+            "FDR": 0.15193452083600364,
+            "cohen_d": 0.5512431783450996
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7212550267815306,
+            "local_cos_sim": 0.8311385986494432,
+            "silhouette_score_cosine": -0.6616899872519421,
+            "silhouette_score_euclidean": -0.5113736778004322,
+            "slihouette_score_max": -0.5113736778004322,
+            "FDR": 0.11131771397700468,
+            "cohen_d": 0.47184258810964635
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7961377975165682,
+            "local_cos_sim": 0.8927441199553889,
+            "silhouette_score_cosine": -0.6820911371537979,
+            "silhouette_score_euclidean": -0.5247243302149814,
+            "slihouette_score_max": -0.5247243302149814,
+            "FDR": 0.08620102116372996,
+            "cohen_d": 0.4152132492195546
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7964546733956981,
+            "local_cos_sim": 0.8067567507121788,
+            "silhouette_score_cosine": -0.4087671891381569,
+            "silhouette_score_euclidean": -0.3318918445812752,
+            "slihouette_score_max": -0.3318918445812752,
+            "FDR": 0.0013075907275929956,
+            "cohen_d": 0.0511388448753586
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9874817810667377,
+            "local_cos_sim": 0.9877823069537184,
+            "silhouette_score_cosine": -0.3893326674990888,
+            "silhouette_score_euclidean": -0.24926248095139553,
+            "slihouette_score_max": -0.24926248095139553,
+            "FDR": 0.000265599801773469,
+            "cohen_d": 0.02304776786473992
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8500786702427645,
+            "local_cos_sim": 0.9150815210952307,
+            "silhouette_score_cosine": -0.7085463050965853,
+            "silhouette_score_euclidean": -0.5144723678257949,
+            "slihouette_score_max": -0.5144723678257949,
+            "FDR": 0.08987725373238067,
+            "cohen_d": 0.4239746542716455
+        }
+    },
+    "seq2img_RP": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.99983469740008,
+            "local_cos_sim": 0.9998939381386008,
+            "silhouette_score_cosine": -0.8372488250408314,
+            "silhouette_score_euclidean": -0.567989185105477,
+            "slihouette_score_max": -0.567989185105477,
+            "FDR": 0.04546080075140002,
+            "cohen_d": 0.3015320903366672
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999989127659857,
+            "local_cos_sim": 0.999999570227646,
+            "silhouette_score_cosine": -0.7176039907778407,
+            "silhouette_score_euclidean": -0.6671563597797633,
+            "slihouette_score_max": -0.6671563597797633,
+            "FDR": 0.004211842504703359,
+            "cohen_d": 0.09178063526369121
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999999463891854,
+            "local_cos_sim": 0.9999999743296457,
+            "silhouette_score_cosine": -0.6583769876401041,
+            "silhouette_score_euclidean": -0.4903130185190638,
+            "slihouette_score_max": -0.4903130185190638,
+            "FDR": 0.009782009465335887,
+            "cohen_d": 0.13987143715094863
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999999021977283,
+            "local_cos_sim": 0.999999911529458,
+            "silhouette_score_cosine": -0.7077977297168998,
+            "silhouette_score_euclidean": -0.7250900391662801,
+            "slihouette_score_max": -0.7077977297168998,
+            "FDR": 0.0014150931171184472,
+            "cohen_d": 0.05319949468027769
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9831593161233678,
+            "local_cos_sim": 0.988931107197062,
+            "silhouette_score_cosine": -0.7684698124947045,
+            "silhouette_score_euclidean": -0.682937272535014,
+            "slihouette_score_max": -0.682937272535014,
+            "FDR": 0.006720723194915181,
+            "cohen_d": 0.11593725195048553
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9977797847409683,
+            "local_cos_sim": 0.9986477535845136,
+            "silhouette_score_cosine": -0.6812851372929598,
+            "silhouette_score_euclidean": -0.5321065110961719,
+            "slihouette_score_max": -0.5321065110961719,
+            "FDR": 0.00029410689571435146,
+            "cohen_d": 0.024253119210293404
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999992236521665,
+            "local_cos_sim": 0.9999995266738366,
+            "silhouette_score_cosine": -0.6817279183248783,
+            "silhouette_score_euclidean": -0.6481863657658733,
+            "slihouette_score_max": -0.6481863657658733,
+            "FDR": 0.007739373870368281,
+            "cohen_d": 0.12441361557617624
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999952955006007,
+            "local_cos_sim": 0.9999984940372507,
+            "silhouette_score_cosine": -0.6909374310870541,
+            "silhouette_score_euclidean": -0.7900074626932507,
+            "slihouette_score_max": -0.6909374310870541,
+            "FDR": 0.11286586308007324,
+            "cohen_d": 0.47511233004432385
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9998384136860615,
+            "local_cos_sim": 0.99999767587538,
+            "silhouette_score_cosine": -0.7220451767009044,
+            "silhouette_score_euclidean": -0.5452147372406452,
+            "slihouette_score_max": -0.5452147372406452,
+            "FDR": 0.7261456354743092,
+            "cohen_d": 1.2051104808060622
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999946257153481,
+            "local_cos_sim": 0.9999984021393094,
+            "silhouette_score_cosine": -0.6838469589170602,
+            "silhouette_score_euclidean": -0.5831173606965379,
+            "slihouette_score_max": -0.5831173606965379,
+            "FDR": 0.028018388505227542,
+            "cohen_d": 0.23672088418738021
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9952136678072817,
+            "local_cos_sim": 0.9981298241140739,
+            "silhouette_score_cosine": -0.5758685242910399,
+            "silhouette_score_euclidean": -0.4840796104888231,
+            "slihouette_score_max": -0.4840796104888231,
+            "FDR": 0.04927132140951194,
+            "cohen_d": 0.31391502483797085
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999341841053221,
+            "local_cos_sim": 0.9999564100626741,
+            "silhouette_score_cosine": -0.6979561433259374,
+            "silhouette_score_euclidean": -0.499173438569383,
+            "slihouette_score_max": -0.499173438569383,
+            "FDR": 0.014831486220383076,
+            "cohen_d": 0.1722294180468777
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9982924855758448,
+            "local_cos_sim": 0.9987813372784055,
+            "silhouette_score_cosine": -0.6176175674278753,
+            "silhouette_score_euclidean": -0.4367922207572097,
+            "slihouette_score_max": -0.4367922207572097,
+            "FDR": 0.0007739892755335535,
+            "cohen_d": 0.03934435856723435
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999868107231232,
+            "local_cos_sim": 0.9999942635731982,
+            "silhouette_score_cosine": -0.7878689011575034,
+            "silhouette_score_euclidean": -0.7783502735448103,
+            "slihouette_score_max": -0.7783502735448103,
+            "FDR": 0.07232565648161031,
+            "cohen_d": 0.38033053120045546
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.999946850306877,
+            "local_cos_sim": 0.9999494426212342,
+            "silhouette_score_cosine": -0.47647071543456637,
+            "silhouette_score_euclidean": -0.3116007117735714,
+            "slihouette_score_max": -0.3116007117735714,
+            "FDR": 0.0007705781528656269,
+            "cohen_d": 0.03925756367544035
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999743791833436,
+            "local_cos_sim": 0.9999743951066657,
+            "silhouette_score_cosine": -0.22565796420128134,
+            "silhouette_score_euclidean": -0.22163680868715008,
+            "slihouette_score_max": -0.22163680868715008,
+            "FDR": 1.573045390119453e-07,
+            "cohen_d": 0.0005609002389230107
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.999789756269798,
+            "local_cos_sim": 0.9998495364521696,
+            "silhouette_score_cosine": -0.822627498899478,
+            "silhouette_score_euclidean": -0.6700723501444671,
+            "slihouette_score_max": -0.6700723501444671,
+            "FDR": 0.022428338654814643,
+            "cohen_d": 0.21179395012518484
+        }
+    },
+    "seq2img_GAF": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8722074122037997,
+            "local_cos_sim": 0.9344021946104593,
+            "silhouette_score_cosine": -0.8158449434455706,
+            "silhouette_score_euclidean": -0.5193726687663247,
+            "slihouette_score_max": -0.5193726687663247,
+            "FDR": 0.022449948480649035,
+            "cohen_d": 0.21189595786918183
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6025957224898448,
+            "local_cos_sim": 0.7520735276317811,
+            "silhouette_score_cosine": -0.7736826055118312,
+            "silhouette_score_euclidean": -0.44063498225872066,
+            "slihouette_score_max": -0.44063498225872066,
+            "FDR": 0.052456757330563694,
+            "cohen_d": 0.32390355765432305
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9107495297657398,
+            "local_cos_sim": 0.9489426806711838,
+            "silhouette_score_cosine": -0.5547857611866049,
+            "silhouette_score_euclidean": -0.5631880178458365,
+            "slihouette_score_max": -0.5547857611866049,
+            "FDR": 0.01124397396513517,
+            "cohen_d": 0.1499598210530752
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6001087400368728,
+            "local_cos_sim": 0.7134123722276863,
+            "silhouette_score_cosine": -0.724272441400048,
+            "silhouette_score_euclidean": -0.40952663229843406,
+            "slihouette_score_max": -0.40952663229843406,
+            "FDR": 0.028509170743348838,
+            "cohen_d": 0.23878513665364032
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.2304422821946059,
+            "local_cos_sim": 0.6095557994877722,
+            "silhouette_score_cosine": -0.8585976763438384,
+            "silhouette_score_euclidean": -0.6622104974142747,
+            "slihouette_score_max": -0.6622104974142747,
+            "FDR": 0.27707005438058807,
+            "cohen_d": 0.7444058763612604
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.17501327664397945,
+            "local_cos_sim": 0.6063784395065223,
+            "silhouette_score_cosine": -0.7580762591631387,
+            "silhouette_score_euclidean": -0.594551274289068,
+            "slihouette_score_max": -0.594551274289068,
+            "FDR": 0.28886656407703015,
+            "cohen_d": 0.760087579265745
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8995299728496076,
+            "local_cos_sim": 0.9275281200479637,
+            "silhouette_score_cosine": -0.7462865790818969,
+            "silhouette_score_euclidean": -0.589999620302859,
+            "slihouette_score_max": -0.589999620302859,
+            "FDR": 0.0049764557978967255,
+            "cohen_d": 0.09976428015975182
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8285363859033993,
+            "local_cos_sim": 0.8917246589391875,
+            "silhouette_score_cosine": -0.7857264422602187,
+            "silhouette_score_euclidean": -0.6086799010554242,
+            "slihouette_score_max": -0.6086799010554242,
+            "FDR": 0.015741739921559857,
+            "cohen_d": 0.17743584711979626
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8036842204046541,
+            "local_cos_sim": 0.8741855658151294,
+            "silhouette_score_cosine": -0.7621301249648338,
+            "silhouette_score_euclidean": -0.4440214515328183,
+            "slihouette_score_max": -0.4440214515328183,
+            "FDR": 0.018665126866908698,
+            "cohen_d": 0.19321038723064918
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8032336685344257,
+            "local_cos_sim": 0.8526783167037405,
+            "silhouette_score_cosine": -0.7023622142067003,
+            "silhouette_score_euclidean": -0.4882464121847481,
+            "slihouette_score_max": -0.4882464121847481,
+            "FDR": 0.008617537214184871,
+            "cohen_d": 0.13128242238917495
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.15102303377883192,
+            "local_cos_sim": 0.484441830918732,
+            "silhouette_score_cosine": -0.6318418091614393,
+            "silhouette_score_euclidean": -0.3742998634345332,
+            "slihouette_score_max": -0.3742998634345332,
+            "FDR": 0.207328806470571,
+            "cohen_d": 0.6439391376062974
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6095948044755788,
+            "local_cos_sim": 0.8110378324264572,
+            "silhouette_score_cosine": -0.5934443109471902,
+            "silhouette_score_euclidean": -0.3636294130952348,
+            "slihouette_score_max": -0.3636294130952348,
+            "FDR": 0.10523752442968946,
+            "cohen_d": 0.4587755974977079
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.28759282883028475,
+            "local_cos_sim": 0.5900033176367837,
+            "silhouette_score_cosine": -0.7322222672501869,
+            "silhouette_score_euclidean": -0.6466660517652886,
+            "slihouette_score_max": -0.6466660517652886,
+            "FDR": 0.17253950439957555,
+            "cohen_d": 0.5874342591296078
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7223293786203692,
+            "local_cos_sim": 0.8858444049588362,
+            "silhouette_score_cosine": -0.7597224815567845,
+            "silhouette_score_euclidean": -0.6492815324901977,
+            "slihouette_score_max": -0.6492815324901977,
+            "FDR": 0.08833904842511694,
+            "cohen_d": 0.420330937298498
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.745325659788946,
+            "local_cos_sim": 0.8224051507864987,
+            "silhouette_score_cosine": -0.6163057483929699,
+            "silhouette_score_euclidean": -0.4733701480723074,
+            "slihouette_score_max": -0.4733701480723074,
+            "FDR": 0.017686826730860958,
+            "cohen_d": 0.18807884905465025
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.1912644948210406,
+            "local_cos_sim": 0.3711401721674548,
+            "silhouette_score_cosine": -0.5071647780175904,
+            "silhouette_score_euclidean": -0.1009601677539493,
+            "slihouette_score_max": -0.1009601677539493,
+            "FDR": 0.08747632022187854,
+            "cohen_d": 0.41827340394024226
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8638392032281216,
+            "local_cos_sim": 0.9122887896191929,
+            "silhouette_score_cosine": -0.68514745900072,
+            "silhouette_score_euclidean": -0.5559717340176697,
+            "slihouette_score_max": -0.5559717340176697,
+            "FDR": 0.013431551866607884,
+            "cohen_d": 0.16389967581790932
+        }
+    },
+    "seq2img_STFT": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9996039627373816,
+            "local_cos_sim": 0.9999067387616215,
+            "silhouette_score_cosine": -0.7452541637127148,
+            "silhouette_score_euclidean": -0.6378792263644961,
+            "slihouette_score_max": -0.6378792263644961,
+            "FDR": 0.060904461009046264,
+            "cohen_d": 0.34901134941158074
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9950523026303175,
+            "local_cos_sim": 0.9975543457019349,
+            "silhouette_score_cosine": -0.7443505986701213,
+            "silhouette_score_euclidean": -0.6191843111775076,
+            "slihouette_score_max": -0.6191843111775076,
+            "FDR": 0.04507463818837962,
+            "cohen_d": 0.30024869088267353
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999925555437709,
+            "local_cos_sim": 0.9999948451549748,
+            "silhouette_score_cosine": -0.6106192977955849,
+            "silhouette_score_euclidean": -0.5883066418908401,
+            "slihouette_score_max": -0.5883066418908401,
+            "FDR": 0.027974519387029807,
+            "cohen_d": 0.23653549157380085
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9945938118057133,
+            "local_cos_sim": 0.9952907123569813,
+            "silhouette_score_cosine": -0.7608154335556646,
+            "silhouette_score_euclidean": -0.47427986507335324,
+            "slihouette_score_max": -0.47427986507335324,
+            "FDR": 0.006463824026186061,
+            "cohen_d": 0.1136998155335888
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9989873906449097,
+            "local_cos_sim": 0.9995533599055951,
+            "silhouette_score_cosine": -0.661490322272423,
+            "silhouette_score_euclidean": -0.7275457437864747,
+            "slihouette_score_max": -0.661490322272423,
+            "FDR": 0.001037007305221425,
+            "cohen_d": 0.0455413505557625
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9978716761903865,
+            "local_cos_sim": 0.9984752840501283,
+            "silhouette_score_cosine": -0.6434684593301659,
+            "silhouette_score_euclidean": -0.5967221959889311,
+            "slihouette_score_max": -0.5967221959889311,
+            "FDR": 0.000490343360845249,
+            "cohen_d": 0.0313159180240736
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999844091304962,
+            "local_cos_sim": 0.9999931919773599,
+            "silhouette_score_cosine": -0.7550527936684363,
+            "silhouette_score_euclidean": -0.6066145447362782,
+            "slihouette_score_max": -0.6066145447362782,
+            "FDR": 0.08657569297024988,
+            "cohen_d": 0.41611463076957506
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9979755696184164,
+            "local_cos_sim": 0.9993843413369035,
+            "silhouette_score_cosine": -0.7025836697218846,
+            "silhouette_score_euclidean": -0.7224607812780378,
+            "slihouette_score_max": -0.7025836697218846,
+            "FDR": 0.0014648603557321552,
+            "cohen_d": 0.054126894530023714
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7306296462544435,
+            "local_cos_sim": 0.9825420747392006,
+            "silhouette_score_cosine": -0.6703431843626014,
+            "silhouette_score_euclidean": -0.6824622832605204,
+            "slihouette_score_max": -0.6703431843626014,
+            "FDR": 0.38909229924527605,
+            "cohen_d": 0.8821477192004479
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9968205320433725,
+            "local_cos_sim": 0.9986072049070118,
+            "silhouette_score_cosine": -0.626970387329036,
+            "silhouette_score_euclidean": -0.527957683711436,
+            "slihouette_score_max": -0.527957683711436,
+            "FDR": 0.1351416043495686,
+            "cohen_d": 0.5198876885435326
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9995283038488009,
+            "local_cos_sim": 0.9997157511885163,
+            "silhouette_score_cosine": -0.6115368554910281,
+            "silhouette_score_euclidean": -0.5758442064420889,
+            "slihouette_score_max": -0.5758442064420889,
+            "FDR": 0.0590354417188417,
+            "cohen_d": 0.3436144400890093
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9793145365942029,
+            "local_cos_sim": 0.985551364489347,
+            "silhouette_score_cosine": -0.5368026557218777,
+            "silhouette_score_euclidean": -0.5945514419467351,
+            "slihouette_score_max": -0.5368026557218777,
+            "FDR": 0.03270512078903772,
+            "cohen_d": 0.25575426013670904
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999880066341764,
+            "local_cos_sim": 0.9999909221363157,
+            "silhouette_score_cosine": -0.6140255647200293,
+            "silhouette_score_euclidean": -0.516337347344946,
+            "slihouette_score_max": -0.516337347344946,
+            "FDR": 0.013460550464055842,
+            "cohen_d": 0.16407650937325455
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999055104621858,
+            "local_cos_sim": 0.9999709936289908,
+            "silhouette_score_cosine": -0.7190458128849213,
+            "silhouette_score_euclidean": -0.6591972899631692,
+            "slihouette_score_max": -0.6591972899631692,
+            "FDR": 0.035981325205304115,
+            "cohen_d": 0.2682585514212142
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9993056602515621,
+            "local_cos_sim": 0.9993189324230329,
+            "silhouette_score_cosine": -0.35389598303156483,
+            "silhouette_score_euclidean": -0.40129084756332256,
+            "slihouette_score_max": -0.35389598303156483,
+            "FDR": 0.00010225807185113878,
+            "cohen_d": 0.014300914086249086
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9827553052869759,
+            "local_cos_sim": 0.9827727029437198,
+            "silhouette_score_cosine": -0.19889506350156402,
+            "silhouette_score_euclidean": -0.20292597306568494,
+            "slihouette_score_max": -0.19889506350156402,
+            "FDR": 3.4044726865436514e-07,
+            "cohen_d": 0.0008251633397750595
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.9999590521072002,
+            "local_cos_sim": 0.9999794265807914,
+            "silhouette_score_cosine": -0.714455128797155,
+            "silhouette_score_euclidean": -0.6028509634730419,
+            "slihouette_score_max": -0.6028509634730419,
+            "FDR": 0.005989255137632452,
+            "cohen_d": 0.10944638082305373
+        }
+    },
+    "seq2img_Plain_Tile": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.5910772350964912,
+            "local_cos_sim": 0.7218548815492551,
+            "silhouette_score_cosine": -0.8090027055554052,
+            "silhouette_score_euclidean": -0.7747042869645705,
+            "slihouette_score_max": -0.7747042869645705,
+            "FDR": 0.04360616134112761,
+            "cohen_d": 0.2953173254014319
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.39382789860895956,
+            "local_cos_sim": 0.6463813049509533,
+            "silhouette_score_cosine": -0.8295130351828274,
+            "silhouette_score_euclidean": -0.7805562668406397,
+            "slihouette_score_max": -0.7805562668406397,
+            "FDR": 0.14539278806050007,
+            "cohen_d": 0.5392453765411439
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7795701567092385,
+            "local_cos_sim": 0.8408466721364489,
+            "silhouette_score_cosine": -0.753327918615552,
+            "silhouette_score_euclidean": -0.8299137316533792,
+            "slihouette_score_max": -0.753327918615552,
+            "FDR": 0.01264728549492494,
+            "cohen_d": 0.1590426703430557
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7539416324893689,
+            "local_cos_sim": 0.8113932512407587,
+            "silhouette_score_cosine": -0.6743426797502027,
+            "silhouette_score_euclidean": -0.7925287298193533,
+            "slihouette_score_max": -0.6743426797502027,
+            "FDR": 0.010503507321913998,
+            "cohen_d": 0.1449379682616946
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.3475203284544346,
+            "local_cos_sim": 0.4643497539106981,
+            "silhouette_score_cosine": -0.7677161968610423,
+            "silhouette_score_euclidean": -0.7177593367045829,
+            "slihouette_score_max": -0.7177593367045829,
+            "FDR": 0.027314567723229415,
+            "cohen_d": 0.23372876469630097
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.4714691207329241,
+            "local_cos_sim": 0.8019645069015896,
+            "silhouette_score_cosine": -0.7944220924563212,
+            "silhouette_score_euclidean": -0.8226150315708292,
+            "slihouette_score_max": -0.7944220924563212,
+            "FDR": 0.2991395154011128,
+            "cohen_d": 0.7734849906767587
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.714702947921506,
+            "local_cos_sim": 0.7990792621482457,
+            "silhouette_score_cosine": -0.7714012862706325,
+            "silhouette_score_euclidean": -0.8276939151347004,
+            "slihouette_score_max": -0.7714012862706325,
+            "FDR": 0.02105264138414051,
+            "cohen_d": 0.2051957182016258
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.5297014715834497,
+            "local_cos_sim": 0.626151657575942,
+            "silhouette_score_cosine": -0.8459778821435074,
+            "silhouette_score_euclidean": -0.821396895797185,
+            "slihouette_score_max": -0.821396895797185,
+            "FDR": 0.02059473659399049,
+            "cohen_d": 0.20295189870504043
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.43636390797592023,
+            "local_cos_sim": 0.7309170803356799,
+            "silhouette_score_cosine": -0.8498327075955365,
+            "silhouette_score_euclidean": -0.7724782092891971,
+            "slihouette_score_max": -0.7724782092891971,
+            "FDR": 0.2262065370118509,
+            "cohen_d": 0.6726165876810516
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.42928618609486335,
+            "local_cos_sim": 0.5602253277890775,
+            "silhouette_score_cosine": -0.5889915101918977,
+            "silhouette_score_euclidean": -0.8189915515055133,
+            "slihouette_score_max": -0.5889915101918977,
+            "FDR": 0.038715879268326536,
+            "cohen_d": 0.27826562586250764
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.471953907149115,
+            "local_cos_sim": 0.6246432047567996,
+            "silhouette_score_cosine": -0.6228964342389571,
+            "silhouette_score_euclidean": -0.6633855578451633,
+            "slihouette_score_max": -0.6228964342389571,
+            "FDR": 0.05887777061861647,
+            "cohen_d": 0.3431552727807529
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.5213430866853743,
+            "local_cos_sim": 0.622854008718231,
+            "silhouette_score_cosine": -0.7471324957028159,
+            "silhouette_score_euclidean": -0.6180174646657164,
+            "slihouette_score_max": -0.6180174646657164,
+            "FDR": 0.022393464242215767,
+            "cohen_d": 0.21162922407935897
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7255624252576861,
+            "local_cos_sim": 0.7797922756008405,
+            "silhouette_score_cosine": -0.782139488516875,
+            "silhouette_score_euclidean": -0.796104741480147,
+            "slihouette_score_max": -0.782139488516875,
+            "FDR": 0.00887281559681265,
+            "cohen_d": 0.13321272909758022
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.41033791085623883,
+            "local_cos_sim": 0.610238642556567,
+            "silhouette_score_cosine": -0.8770285012779429,
+            "silhouette_score_euclidean": -0.8493709217348433,
+            "slihouette_score_max": -0.8493709217348433,
+            "FDR": 0.08992338995971147,
+            "cohen_d": 0.4240834586722559
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7961977014911554,
+            "local_cos_sim": 0.810816239945301,
+            "silhouette_score_cosine": -0.7160802711075159,
+            "silhouette_score_euclidean": -0.7694787682272552,
+            "slihouette_score_max": -0.7160802711075159,
+            "FDR": 0.0008313784720878248,
+            "cohen_d": 0.040776916805659175
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8106327072260846,
+            "local_cos_sim": 0.8240740652847134,
+            "silhouette_score_cosine": -0.6827869693066706,
+            "silhouette_score_euclidean": -0.6665428495023387,
+            "slihouette_score_max": -0.6665428495023387,
+            "FDR": 0.0006051553385074978,
+            "cohen_d": 0.03478951964334943
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.49585260648391805,
+            "local_cos_sim": 0.6437576502062433,
+            "silhouette_score_cosine": -0.8730464930441527,
+            "silhouette_score_euclidean": -0.77628819616987,
+            "slihouette_score_max": -0.77628819616987,
+            "FDR": 0.04730189465796372,
+            "cohen_d": 0.3075772899872932
+        }
+    },
+    "PAA": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.2565186750374164,
+            "local_cos_sim": 0.6454948134979845,
+            "silhouette_score_cosine": -0.35404313452088254,
+            "silhouette_score_euclidean": -0.19351779888364362,
+            "slihouette_score_max": -0.19351779888364362,
+            "FDR": 0.4456486366030736,
+            "cohen_d": 0.9440854162660003
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.04704043094134398,
+            "local_cos_sim": 0.4294800009278432,
+            "silhouette_score_cosine": -0.2169293627499694,
+            "silhouette_score_euclidean": -0.07827411376160472,
+            "slihouette_score_max": -0.07827411376160472,
+            "FDR": 0.38421891942251746,
+            "cohen_d": 0.8766058628853876
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7609836903878753,
+            "local_cos_sim": 0.7795461620349532,
+            "silhouette_score_cosine": -0.32488421440353976,
+            "silhouette_score_euclidean": -0.21692086831138688,
+            "slihouette_score_max": -0.21692086831138688,
+            "FDR": 0.0019157888388194185,
+            "cohen_d": 0.06189973891414112
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.20584502478913116,
+            "local_cos_sim": 0.22319856746227187,
+            "silhouette_score_cosine": -0.31255573241747037,
+            "silhouette_score_euclidean": -0.20740318628142365,
+            "slihouette_score_max": -0.20740318628142365,
+            "FDR": 0.0003109786221520002,
+            "cohen_d": 0.024939070638337755
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.3693953349279693,
+            "local_cos_sim": 0.5854302693902335,
+            "silhouette_score_cosine": -0.3674934806969985,
+            "silhouette_score_euclidean": -0.14461393486697208,
+            "slihouette_score_max": -0.14461393486697208,
+            "FDR": 0.1521281992349774,
+            "cohen_d": 0.5515944148284633
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.07915385093636691,
+            "local_cos_sim": 0.7407064927058183,
+            "silhouette_score_cosine": -0.33679263580744095,
+            "silhouette_score_euclidean": -0.1786655370468393,
+            "slihouette_score_max": -0.1786655370468393,
+            "FDR": 0.9927931072509616,
+            "cohen_d": 1.4091083047452113
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.1875474544983682,
+            "local_cos_sim": 0.2766301645273764,
+            "silhouette_score_cosine": -0.30328178927031973,
+            "silhouette_score_euclidean": -0.15220427779635018,
+            "slihouette_score_max": -0.15220427779635018,
+            "FDR": 0.01051927277724588,
+            "cohen_d": 0.14504670128786715
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.06737380528901266,
+            "local_cos_sim": 0.25379902484937084,
+            "silhouette_score_cosine": -0.32438416009012194,
+            "silhouette_score_euclidean": -0.2348548295902605,
+            "slihouette_score_max": -0.2348548295902605,
+            "FDR": 0.10852601340663505,
+            "cohen_d": 0.46588842743007697
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.0008613934591297475,
+            "local_cos_sim": 0.6995703331793454,
+            "silhouette_score_cosine": -0.17433992934495818,
+            "silhouette_score_euclidean": -0.08243170663430882,
+            "slihouette_score_max": -0.08243170663430882,
+            "FDR": 1.3663317011987737,
+            "cohen_d": 1.6530769499323215
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.13086730372931557,
+            "local_cos_sim": 0.39981995601072523,
+            "silhouette_score_cosine": -0.2632516739170536,
+            "silhouette_score_euclidean": -0.17800004800899458,
+            "slihouette_score_max": -0.17800004800899458,
+            "FDR": 0.21630143981048636,
+            "cohen_d": 0.6577255351747966
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.2089175880160008,
+            "local_cos_sim": 0.6312667221318724,
+            "silhouette_score_cosine": -0.3700051409358552,
+            "silhouette_score_euclidean": -0.2591907029955721,
+            "slihouette_score_max": -0.2591907029955721,
+            "FDR": 0.4575465937174047,
+            "cohen_d": 0.9566050320977877
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.3630017418568893,
+            "local_cos_sim": 0.5505278320697315,
+            "silhouette_score_cosine": -0.2202528591160604,
+            "silhouette_score_euclidean": -0.14282775394983163,
+            "slihouette_score_max": -0.14282775394983163,
+            "FDR": 0.04422123251437783,
+            "cohen_d": 0.29739277904608863
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.4741745038712749,
+            "local_cos_sim": 0.5389484264440442,
+            "silhouette_score_cosine": -0.4083931412756298,
+            "silhouette_score_euclidean": -0.23933047555684514,
+            "slihouette_score_max": -0.23933047555684514,
+            "FDR": 0.013518240396080768,
+            "cohen_d": 0.1644277372956325
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.0004232536347445402,
+            "local_cos_sim": 0.28479708240250695,
+            "silhouette_score_cosine": -0.3108240257611083,
+            "silhouette_score_euclidean": -0.1527876143323299,
+            "slihouette_score_max": -0.1527876143323299,
+            "FDR": 0.20502875931610823,
+            "cohen_d": 0.6403573366739983
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.40070568687133684,
+            "local_cos_sim": 0.4035709153205375,
+            "silhouette_score_cosine": -0.20838219255766677,
+            "silhouette_score_euclidean": -0.178520601739795,
+            "slihouette_score_max": -0.178520601739795,
+            "FDR": 1.590246346626599e-05,
+            "cohen_d": 0.00563958570575286
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.4751690811189286,
+            "local_cos_sim": 0.4751960996460514,
+            "silhouette_score_cosine": -0.16930639219444008,
+            "silhouette_score_euclidean": -0.16677954387493432,
+            "slihouette_score_max": -0.16677954387493432,
+            "FDR": 1.9382541068973807e-09,
+            "cohen_d": 6.226161107612588e-05
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.28266677340759494,
+            "local_cos_sim": 0.4414843739444701,
+            "silhouette_score_cosine": -0.4627541797635742,
+            "silhouette_score_euclidean": -0.17555000426482706,
+            "slihouette_score_max": -0.17555000426482706,
+            "FDR": 0.0443202919879879,
+            "cohen_d": 0.29772568578470987
+        }
+    },
+    "SAX": {
+        "CBF": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7485210487064802,
+            "local_cos_sim": 0.8832627516442101,
+            "silhouette_score_cosine": -0.3750410819729453,
+            "silhouette_score_euclidean": -0.21111741555595845,
+            "slihouette_score_max": -0.21111741555595845,
+            "FDR": 0.4390351963568546,
+            "cohen_d": 0.9370541034079671
+        },
+        "OSULeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6796600267513253,
+            "local_cos_sim": 0.8070588828645657,
+            "silhouette_score_cosine": -0.22783846208527803,
+            "silhouette_score_euclidean": -0.0820012697287388,
+            "slihouette_score_max": -0.0820012697287388,
+            "FDR": 0.3739397165772662,
+            "cohen_d": 0.8648002273094824
+        },
+        "Adiac": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8974792587844342,
+            "local_cos_sim": 0.9057277048517198,
+            "silhouette_score_cosine": -0.3504667361611317,
+            "silhouette_score_euclidean": -0.24451215854740918,
+            "slihouette_score_max": -0.24451215854740918,
+            "FDR": 0.002342309236568794,
+            "cohen_d": 0.06844427275629121
+        },
+        "Fish": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6761712085799979,
+            "local_cos_sim": 0.68422967265691,
+            "silhouette_score_cosine": -0.315393612735597,
+            "silhouette_score_euclidean": -0.1978173979247041,
+            "slihouette_score_max": -0.1978173979247041,
+            "FDR": 0.00041325026262110774,
+            "cohen_d": 0.02874892215792125
+        },
+        "MedicalImages": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8371778682333897,
+            "local_cos_sim": 0.9035440192538867,
+            "silhouette_score_cosine": -0.4454194285153186,
+            "silhouette_score_euclidean": -0.20146076230535542,
+            "slihouette_score_max": -0.20146076230535542,
+            "FDR": 0.18248250105533245,
+            "cohen_d": 0.6041233335260814
+        },
+        "Wafer": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6752878930293479,
+            "local_cos_sim": 0.9203149965364856,
+            "silhouette_score_cosine": -0.3218894918930312,
+            "silhouette_score_euclidean": -0.19745440242240822,
+            "slihouette_score_max": -0.19745440242240822,
+            "FDR": 1.0237589393851696,
+            "cohen_d": 1.4309150494597291
+        },
+        "SwedishLeaf": {
+            "dataset_name": "",
+            "global_cos_sim": 0.6880054252718381,
+            "local_cos_sim": 0.7230123711409009,
+            "silhouette_score_cosine": -0.35429472673172735,
+            "silhouette_score_euclidean": -0.15988799930082376,
+            "slihouette_score_max": -0.15988799930082376,
+            "FDR": 0.010738465144740241,
+            "cohen_d": 0.14655009481225348
+        },
+        "FacesUCR": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7747428712266224,
+            "local_cos_sim": 0.8204715129701114,
+            "silhouette_score_cosine": -0.3353780921710338,
+            "silhouette_score_euclidean": -0.19578308075686168,
+            "slihouette_score_max": -0.19578308075686168,
+            "FDR": 0.11259620740786902,
+            "cohen_d": 0.47454442870582525
+        },
+        "SyntheticControl": {
+            "dataset_name": "",
+            "global_cos_sim": 0.670743868952616,
+            "local_cos_sim": 0.9039656903118012,
+            "silhouette_score_cosine": -0.19217147682007582,
+            "silhouette_score_euclidean": -0.10268784802635256,
+            "slihouette_score_max": -0.10268784802635256,
+            "FDR": 1.3066849724043859,
+            "cohen_d": 1.6165920774297924
+        },
+        "FaceFour": {
+            "dataset_name": "",
+            "global_cos_sim": 0.813319158545519,
+            "local_cos_sim": 0.8678488367770385,
+            "silhouette_score_cosine": -0.27635909587464985,
+            "silhouette_score_euclidean": -0.16654558168363295,
+            "slihouette_score_max": -0.16654558168363295,
+            "FDR": 0.18923894786938214,
+            "cohen_d": 0.615205571934101
+        },
+        "Trace": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7884285298243398,
+            "local_cos_sim": 0.901172129904038,
+            "silhouette_score_cosine": -0.3826272937804138,
+            "silhouette_score_euclidean": -0.2714205335700598,
+            "slihouette_score_max": -0.2714205335700598,
+            "FDR": 0.3831171844850463,
+            "cohen_d": 0.8753481415814468
+        },
+        "Beef": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8213904985971183,
+            "local_cos_sim": 0.8652733049167219,
+            "silhouette_score_cosine": -0.24383360094523587,
+            "silhouette_score_euclidean": -0.16471297330387386,
+            "slihouette_score_max": -0.16471297330387386,
+            "FDR": 0.028983355822903394,
+            "cohen_d": 0.24076277047294248
+        },
+        "GunPoint": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7973474057398462,
+            "local_cos_sim": 0.8250631651200436,
+            "silhouette_score_cosine": -0.3957764915123846,
+            "silhouette_score_euclidean": -0.23236841253708262,
+            "slihouette_score_max": -0.23236841253708262,
+            "FDR": 0.016680705440164454,
+            "cohen_d": 0.18265106317875326
+        },
+        "TwoPatterns": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7280832858850798,
+            "local_cos_sim": 0.8040188940990552,
+            "silhouette_score_cosine": -0.3276446797456368,
+            "silhouette_score_euclidean": -0.15920068034671825,
+            "slihouette_score_max": -0.15920068034671825,
+            "FDR": 0.18713552638945458,
+            "cohen_d": 0.6117769632626822
+        },
+        "Coffee": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8057538010201414,
+            "local_cos_sim": 0.8071536531820261,
+            "silhouette_score_cosine": -0.2318388527283681,
+            "silhouette_score_euclidean": -0.17689863877386422,
+            "slihouette_score_max": -0.17689863877386422,
+            "FDR": 4.7945312847279416e-05,
+            "cohen_d": 0.009792375896306209
+        },
+        "OliveOil": {
+            "dataset_name": "",
+            "global_cos_sim": 0.8264213814389788,
+            "local_cos_sim": 0.8264976178444317,
+            "silhouette_score_cosine": -0.17418849966666475,
+            "silhouette_score_euclidean": -0.17056395086800685,
+            "slihouette_score_max": -0.17056395086800685,
+            "FDR": 1.3092157330614748e-07,
+            "cohen_d": 0.000511706113518585
+        },
+        "ECG200": {
+            "dataset_name": "",
+            "global_cos_sim": 0.7903688535113531,
+            "local_cos_sim": 0.84606393429984,
+            "silhouette_score_cosine": -0.4323509760129976,
+            "silhouette_score_euclidean": -0.17608002850197763,
+            "slihouette_score_max": -0.17608002850197763,
+            "FDR": 0.07311946404548822,
+            "cohen_d": 0.38241198737876464
+        }
+    }
+}
