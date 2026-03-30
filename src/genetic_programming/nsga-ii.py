@@ -238,9 +238,12 @@ def _evaluate_population(
     series_all: np.ndarray,
     series_shifted_all: list[np.ndarray],
     series_shrunk_all: list[np.ndarray],
-) -> np.ndarray:
+    test_indices: np.ndarray,
+    train_indices: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray]:
     compiled_population = [compile_ast(program) for program in population]
     scores = np.zeros((len(population), 2), dtype=float)
+    scores_test = np.zeros((len(population), 2), dtype=float)
 
     for i, evaluate_program in enumerate(compiled_population):
         series_embeddings = []
@@ -273,16 +276,25 @@ def _evaluate_population(
             [series_embeddings_shrunk, series_embeddings[:, None, :]], axis=1
         )
 
-        fdr_score_shifted = fdr_score(series_embedding_shifted)
-        fdr_score_shrunk = fdr_score(series_embedding_shrunk)
+        fdr_score_shifted = fdr_score(series_embedding_shifted[train_indices])
+        fdr_score_shrunk = fdr_score(series_embedding_shrunk[train_indices])
+
+        fdr_score_shifted_test = fdr_score(series_embedding_shifted[test_indices])
+        fdr_score_shrunk_test = fdr_score(series_embedding_shrunk[test_indices])
 
         fdr_score_shifted = 0.0 if np.isnan(fdr_score_shifted) else float(fdr_score_shifted)
         fdr_score_shrunk = 0.0 if np.isnan(fdr_score_shrunk) else float(fdr_score_shrunk)
 
+        fdr_score_shifted_test = 0.0 if np.isnan(fdr_score_shifted_test) else float(fdr_score_shifted_test)
+        fdr_score_shrunk_test = 0.0 if np.isnan(fdr_score_shrunk_test) else float(fdr_score_shrunk_test)
+
+        # Optimize on train split; report generalization on test split.
         scores[i, 0] = fdr_score_shifted
         scores[i, 1] = fdr_score_shrunk
+        scores_test[i, 0] = fdr_score_shifted_test
+        scores_test[i, 1] = fdr_score_shrunk_test
 
-    return scores
+    return scores, scores_test
 
 
 def _make_offspring(
@@ -339,7 +351,7 @@ def main() -> None:
     shrink_distortion = np.load(shrink_distortion_path)
 
     series_all = dataset["X"]
-    series_all = series_all[:10]
+    series_all = series_all[:100]
     series_shifted_all: list[np.ndarray] = []
     series_shrunk_all: list[np.ndarray] = []
 
@@ -358,23 +370,27 @@ def main() -> None:
     CROSSOVER_RATE = 0.9
     MUTATION_RATE = 0.2
     TOURNAMENT_K = 2
+    TEST_SPLIT = 0.2
 
     rng = np.random.default_rng(RNG_SEED)
+    test_indices = rng.choice(len(series_all), size=int(len(series_all) * TEST_SPLIT), replace=False)
+    train_indices = np.setdiff1d(np.arange(len(series_all)), test_indices)
     population = [
         create_ast(max_depth=MAX_TREE_DEPTH, target_length=TARGET_SERIES_LENGTH, rng=rng)
         for _ in range(POP_SIZE)
     ]
 
-    start_time = time.time()
-
-    scores = _evaluate_population(
+    scores, scores_test = _evaluate_population(
         population,
         series_all=series_all,
         series_shifted_all=series_shifted_all,
         series_shrunk_all=series_shrunk_all,
+        test_indices=test_indices,
+        train_indices=train_indices,
     )
 
     for gen in range(GENERATIONS):
+        start_time = time.time()
         offspring = _make_offspring(
             population,
             scores,
@@ -387,24 +403,38 @@ def main() -> None:
             tournament_k=TOURNAMENT_K,
         )
 
-        offspring_scores = _evaluate_population(
+        offspring_scores, _offspring_scores_test = _evaluate_population(
             offspring,
             series_all=series_all,
             series_shifted_all=series_shifted_all,
             series_shrunk_all=series_shrunk_all,
+            test_indices=test_indices,
+            train_indices=train_indices,
         )
 
         combined_population = population + offspring
         combined_scores = np.vstack([scores, offspring_scores])
         population, scores = nsga_ii_selection(combined_population, combined_scores, POP_SIZE)
 
-        best = np.max(scores, axis=0)
-        print(f"gen={gen+1}/{GENERATIONS} best_shift={best[0]:.4f} best_shrink={best[1]:.4f}")
+        scores, scores_test = _evaluate_population(
+            population,
+            series_all=series_all,
+            series_shifted_all=series_shifted_all,
+            series_shrunk_all=series_shrunk_all,
+            test_indices=test_indices,
+            train_indices=train_indices,
+        )
 
-    end_time = time.time()
-    print(f"Time taken: {end_time - start_time} seconds")
+        best = np.max(scores, axis=0)
+        best_test = np.max(scores_test, axis=0)
+        end_time = time.time()
+        print(f"Time taken: {end_time - start_time} seconds")
+        print(f"gen={gen+1}/{GENERATIONS} best_shift={best[0]:.4f} best_shrink={best[1]:.4f}")
+        print(f"best_shift_test={best_test[0]:.4f} best_shrink_test={best_test[1]:.4f}")
+
     print(f"Final population size: {len(population)}")
     print(f"Final scores shape: {scores.shape}")
+    print(f"Final scores_test shape: {scores_test.shape}")
 
 
 if __name__ == "__main__":
