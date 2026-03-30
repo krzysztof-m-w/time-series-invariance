@@ -177,3 +177,15 @@ def load_distortions(dataset_name, distortion_type):
     data_path = f"data/distortions/{distortion_type}/{dataset_name}.npy"
     data = np.load(data_path)
     return data
+
+def fdr_score(embeddings_distorted: np.ndarray):
+
+    Xn = embeddings_distorted / (np.linalg.norm(embeddings_distorted, axis=-1, keepdims=True) + 1e-12)
+    cos_sim_local = Xn @ Xn.transpose(0, 2, 1)
+    cos_sim_global = Xn[:, None] @ Xn[None, :].transpose(0, 1, 3, 2)
+    mu_intra = np.mean(cos_sim_local)
+    mu_inter = np.mean(cos_sim_global)
+    sigma_intra = np.std(cos_sim_local, ddof=1)
+    sigma_inter = np.std(cos_sim_global, ddof=1)
+    FDR = (mu_intra - mu_inter) ** 2 / (sigma_intra**2 + sigma_inter**2)
+    return FDR
