@@ -14,6 +14,7 @@ functions that can be composed by a genetic program / expression tree.
 
 from __future__ import annotations
 
+from functools import lru_cache
 from dataclasses import dataclass
 from typing import Any, Callable, Dict, Literal, Optional, Tuple
 
@@ -25,10 +26,28 @@ Scalar = float
 
 
 def _as_1d_float(x: Any) -> TimeSeries:
+    # Fast path: most intermediate results are already float64 1-D arrays.
+    if isinstance(x, np.ndarray) and x.dtype == np.float64 and x.ndim == 1:
+        return x
+
     arr = np.asarray(x, dtype=np.float64)
     if arr.ndim != 1:
         arr = arr.reshape(-1)
     return arr
+
+
+@lru_cache(maxsize=256)
+def _interp_grids(in_len: int, out_len: int) -> Tuple[np.ndarray, np.ndarray]:
+    """
+    Cache the `np.interp` grids for resampling/alignment.
+
+    The grids depend only on lengths, so caching avoids repeated `linspace()`.
+    """
+    in_len = int(in_len)
+    out_len = int(out_len)
+    xs_old = np.linspace(0.0, 1.0, num=in_len, dtype=np.float64)
+    xs_new = np.linspace(0.0, 1.0, num=out_len, dtype=np.float64)
+    return xs_old, xs_new
 
 
 def _safe_div(a: TimeSeries, b: TimeSeries, eps: float = 1e-12) -> TimeSeries:
@@ -52,8 +71,7 @@ def _align_like(a: TimeSeries, b: TimeSeries) -> Tuple[TimeSeries, TimeSeries]:
     if len(b) == 1:
         return a, np.full(out_len, float(b[0]), dtype=np.float64)
 
-    xs_old = np.linspace(0.0, 1.0, num=len(b))
-    xs_new = np.linspace(0.0, 1.0, num=out_len)
+    xs_old, xs_new = _interp_grids(len(b), out_len)
     b_res = np.interp(xs_new, xs_old, b)
     return a, b_res
 
@@ -212,8 +230,7 @@ def resample_ts(x: TimeSeries, out_len: int) -> TimeSeries:
     if len(x) == 1:
         return np.full(out_len, float(x[0]), dtype=np.float64)
 
-    xs_old = np.linspace(0.0, 1.0, num=len(x))
-    xs_new = np.linspace(0.0, 1.0, num=out_len)
+    xs_old, xs_new = _interp_grids(len(x), out_len)
     return np.interp(xs_new, xs_old, x)
 
 

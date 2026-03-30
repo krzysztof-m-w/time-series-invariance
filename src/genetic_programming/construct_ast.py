@@ -16,7 +16,7 @@ Implementation strategy
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Dict, Literal, Optional, Tuple
+from typing import Any, Callable, Dict, Literal, Optional, Tuple
 
 import numpy as np
 
@@ -260,34 +260,194 @@ def evaluate_ast(program: TsAstProgram, x: np.ndarray) -> np.ndarray:
     Output length is always forced to `program.target_length`.
     """
 
+    # Normalize the input once; the AST may reference multiple `input` nodes.
+    x_arr = np.asarray(x, dtype=np.float64)
+    if x_arr.ndim != 1:
+        x_arr = x_arr.reshape(-1)
+
+    target_length = int(program.target_length)
+
+    unary_prims = TS_UNARY_PRIMITIVES
+    binary_prims = TS_BINARY_PRIMITIVES
+    resample = resample_ts
+
+    # Memoize computed node outputs by object identity.
+    # `create_ast()` reuses the same `base` / `input_node` objects across leaves,
+    # so this avoids repeating expensive primitives (notably the base resample).
+    memo: Dict[int, np.ndarray] = {}
+
     def eval_node(node: AstNode) -> np.ndarray:
+        node_id = id(node)
+        cached = memo.get(node_id)
+        if cached is not None:
+            return cached
+
         if node.node_type == "input":
-            arr = np.asarray(x, dtype=np.float64)
-            if arr.ndim != 1:
-                arr = arr.reshape(-1)
-            return arr
+            out = x_arr
 
-        if node.node_type == "unary":
-            assert node.op_name is not None
-            fn = TS_UNARY_PRIMITIVES[node.op_name]
-            child_val = eval_node(node.child)  # type: ignore[arg-type]
-            kwargs = node.params or {}
-            return fn(child_val, **kwargs)
+        elif node.node_type == "unary":
+            op_name = node.op_name
+            if op_name is None or node.child is None:
+                raise ValueError("Malformed unary node.")
+            fn = unary_prims[op_name]
+            child_val = eval_node(node.child)
+            params = node.params
+            if params:
+                out = fn(child_val, **params)
+            else:
+                out = fn(child_val)
 
-        if node.node_type == "binary":
-            assert node.op_name is not None
-            fn = TS_BINARY_PRIMITIVES[node.op_name]
-            left_val = eval_node(node.left)  # type: ignore[arg-type]
-            right_val = eval_node(node.right)  # type: ignore[arg-type]
-            kwargs = node.params or {}
-            return fn(left_val, right_val, **kwargs)
+        elif node.node_type == "binary":
+            op_name = node.op_name
+            if op_name is None or node.left is None or node.right is None:
+                raise ValueError("Malformed binary node.")
+            fn = binary_prims[op_name]
+            left_val = eval_node(node.left)
+            right_val = eval_node(node.right)
+            params = node.params
+            if params:
+                out = fn(left_val, right_val, **params)
+            else:
+                out = fn(left_val, right_val)
 
-        raise ValueError(f"Unknown node type: {node.node_type}")
+        else:
+            raise ValueError(f"Unknown node type: {node.node_type}")
+
+        memo[node_id] = out
+        return out
 
     out = eval_node(program.root)
-    if len(out) != program.target_length:
-        out = resample_ts(out, program.target_length)
+    if len(out) != target_length:
+        out = resample(out, target_length)
     return out
 
 
-__all__ = ["AstNode", "TsAstProgram", "create_ast", "evaluate_ast"]
+def compile_ast(program: TsAstProgram) -> Callable[[np.ndarray], np.ndarray]:
+    """
+    Compile an AST into a fast evaluator callable.
+
+    Note: This is a "compile-to-evaluator" step (precomputes evaluation order and
+    primitive function bindings). It is not Numba JIT compilation.
+    """
+    target_length = int(program.target_length)
+
+    # Resolve primitive function registries once.
+    unary_prims = TS_UNARY_PRIMITIVES
+    binary_prims = TS_BINARY_PRIMITIVES
+    resample = resample_ts
+
+    # Build a postorder list of unique nodes (by object identity) so shared
+    # subtrees are evaluated once per call.
+    visited: set[int] = set()
+    order: list[AstNode] = []
+
+    def dfs(node: AstNode) -> None:
+        node_id = id(node)
+        if node_id in visited:
+            return
+        visited.add(node_id)
+
+        if node.node_type == "unary":
+            if node.child is None:
+                raise ValueError("Malformed unary node.")
+            dfs(node.child)
+        elif node.node_type == "binary":
+            if node.left is None or node.right is None:
+                raise ValueError("Malformed binary node.")
+            dfs(node.left)
+            dfs(node.right)
+        elif node.node_type == "input":
+            pass
+        else:
+            raise ValueError(f"Unknown node type: {node.node_type}")
+
+        order.append(node)
+
+    dfs(program.root)
+
+    node_to_idx: Dict[int, int] = {id(n): i for i, n in enumerate(order)}
+    root_idx = node_to_idx[id(program.root)]
+
+    # Pre-build evaluation instructions.
+    #
+    # Each record is one of:
+    # ("input",)
+    # ("unary", fn, child_idx, params_or_none)
+    # ("binary", fn, left_idx, right_idx, params_or_none)
+    instructions: list[tuple[Any, ...]] = []
+    for n in order:
+        if n.node_type == "input":
+            instructions.append(("input",))
+            continue
+
+        if n.node_type == "unary":
+            if n.op_name is None or n.child is None:
+                raise ValueError("Malformed unary node.")
+            fn = unary_prims[n.op_name]
+            child_idx = node_to_idx[id(n.child)]
+            params = n.params or None
+            instructions.append(("unary", fn, child_idx, params))
+            continue
+
+        if n.node_type == "binary":
+            if n.op_name is None or n.left is None or n.right is None:
+                raise ValueError("Malformed binary node.")
+            fn = binary_prims[n.op_name]
+            left_idx = node_to_idx[id(n.left)]
+            right_idx = node_to_idx[id(n.right)]
+            params = n.params or None
+            instructions.append(("binary", fn, left_idx, right_idx, params))
+            continue
+
+        raise ValueError(f"Unknown node type: {n.node_type}")
+
+    def evaluate_compiled(x: np.ndarray) -> np.ndarray:
+        x_arr = np.asarray(x, dtype=np.float64)
+        if x_arr.ndim != 1:
+            x_arr = x_arr.reshape(-1)
+
+        values: list[Optional[np.ndarray]] = [None] * len(instructions)
+
+        for i, inst in enumerate(instructions):
+            kind = inst[0]
+            if kind == "input":
+                values[i] = x_arr
+                continue
+
+            if kind == "unary":
+                _, fn, child_idx, params = inst
+                child_val = values[child_idx]
+                if child_val is None:
+                    raise RuntimeError("Internal error: missing child value.")
+                if params:
+                    values[i] = fn(child_val, **params)
+                else:
+                    values[i] = fn(child_val)
+                continue
+
+            if kind == "binary":
+                _, fn, left_idx, right_idx, params = inst
+                left_val = values[left_idx]
+                right_val = values[right_idx]
+                if left_val is None or right_val is None:
+                    raise RuntimeError("Internal error: missing child value.")
+                if params:
+                    values[i] = fn(left_val, right_val, **params)
+                else:
+                    values[i] = fn(left_val, right_val)
+                continue
+
+            raise ValueError(f"Unknown instruction kind: {kind}")
+
+        out = values[root_idx]
+        if out is None:
+            raise RuntimeError("Internal error: missing output value.")
+
+        if len(out) != target_length:
+            out = resample(out, target_length)
+        return out
+
+    return evaluate_compiled
+
+
+__all__ = ["AstNode", "TsAstProgram", "create_ast", "evaluate_ast", "compile_ast"]

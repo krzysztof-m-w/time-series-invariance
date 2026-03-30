@@ -89,6 +89,33 @@ class TestConstructAst(unittest.TestCase):
         out = construct_ast.evaluate_ast(program, x)
         npt.assert_allclose(out, 2.0 * x)
 
+    def test_compile_ast_matches_evaluate_ast_simple(self) -> None:
+        program = construct_ast.TsAstProgram(
+            root=construct_ast.AstNode(
+                node_type="unary",
+                op_name="resample",
+                params={"out_len": 4},
+                child=construct_ast.AstNode(node_type="input"),
+            ),
+            target_length=4,
+        )
+        compiled = construct_ast.compile_ast(program)
+
+        x2d = np.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]], dtype=np.float64)
+        out_compiled = compiled(x2d)
+        out_eval = construct_ast.evaluate_ast(program, x2d)
+        npt.assert_allclose(out_compiled, out_eval)
+
+    def test_compile_ast_matches_evaluate_ast_generated(self) -> None:
+        rng = np.random.default_rng(0)
+        program = construct_ast.create_ast(max_depth=3, target_length=16, p_unary=0.6, rng=rng)
+        compiled = construct_ast.compile_ast(program)
+
+        x = np.linspace(0.0, 1.0, 32, dtype=np.float64)
+        out_compiled = compiled(x)
+        out_eval = construct_ast.evaluate_ast(program, x)
+        npt.assert_allclose(out_compiled, out_eval)
+
 
 if __name__ == "__main__":
     unittest.main()

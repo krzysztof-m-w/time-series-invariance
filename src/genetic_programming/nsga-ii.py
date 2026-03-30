@@ -3,7 +3,7 @@ from pathlib import Path
 import time
 
 import numpy as np
-from construct_ast import create_ast, evaluate_ast
+from construct_ast import compile_ast, create_ast
 
 # Ensure `import src.*` works regardless of the current working directory.
 # When launching `python src/genetic_programming/nsga-ii.py`, Python puts
@@ -46,11 +46,15 @@ population = [
     for _ in range(INITIAL_POP_SIZE)
 ]
 
+# Pre-compile each AST once, so evaluation over many series avoids recursive
+# traversal and per-node primitive lookups.
+compiled_population = [compile_ast(program) for program in population]
+
 start_time = time.time()
 
-for program in population:
+for evaluate_program in compiled_population:
     for series in series_shifted_all:
-        evaluated_series = evaluate_ast(program, series)
+        evaluated_series = evaluate_program(series)
 
 end_time = time.time()
 print(f"Time taken: {end_time - start_time} seconds")
