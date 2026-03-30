@@ -1,7 +1,8 @@
-venv/*
+.venv/*
 data/*
 .env
 .vscode/*
 __pycache__
 notebooks/evaluations/data/*
 notebooks/evaluations/embeddings/*
+.venv/*

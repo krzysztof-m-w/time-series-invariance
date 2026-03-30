@@ -20,7 +20,7 @@ from typing import Any, Dict, Literal, Optional, Tuple
 
 import numpy as np
 
-from .components import TS_BINARY_PRIMITIVES, TS_UNARY_PRIMITIVES, resample_ts
+from components import TS_BINARY_PRIMITIVES, TS_UNARY_PRIMITIVES, resample_ts
 
 
 AstNodeType = Literal["input", "unary", "binary"]
@@ -89,8 +89,11 @@ def _sample_unary_params(
 ) -> Dict[str, Any]:
     # Only override parameters when the primitive supports it.
     # (Some primitives have safe defaults and we omit kwargs.)
-    if op_name in {"shift", "lag"}:
+    if op_name in {"shift"}:
         return {"shift": _sample_int_shift(rng, target_length), "pad_value": 0.0}
+
+    if op_name in {"lag"}:
+        return {"lag": _sample_int_shift(rng, target_length)}
 
     if op_name in {"diff"}:
         order = int(rng.integers(1, 4))  # 1..3
@@ -133,6 +136,19 @@ def _sample_unary_params(
     if op_name in {"stretch"}:
         factor = float(rng.uniform(0.6, 2.0))
         return {"factor": factor}
+
+    # PAA requires an explicit segment count.
+    # (Even though `paa_up` returns the original length by default, the
+    # primitive itself still requires `segments`.)
+    if op_name in {"paa", "paa_up"}:
+        # Reasonable PAA resolutions relative to target length.
+        max_segments = max(1, int(round(target_length * 0.5)))
+        candidates = [2, 3, 4, 5, 8, 10, 16]
+        candidates = [c for c in candidates if c <= max_segments]
+        if not candidates:
+            candidates = [max_segments]
+        segments = int(rng.choice(candidates)) if len(candidates) > 1 else int(candidates[0])
+        return {"segments": segments}
 
     if op_name == "resample":
         return {"out_len": int(target_length)}
