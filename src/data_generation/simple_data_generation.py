@@ -65,7 +65,7 @@ def shift_time_series(ts, shift):
 
 
 def shrunk_time_series(ts, factor):
-    new_length = int(len(ts) / factor)
+    new_length = int(len(ts) * factor)
     return np.interp(np.linspace(0, len(ts), new_length), np.arange(len(ts)), ts)
 
 

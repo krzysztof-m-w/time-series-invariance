@@ -4,6 +4,13 @@ from src.data_generation.simple_data_generation import (
 )
 
 import numpy as np
+import matplotlib.pyplot as plt
+
+try:
+    import seaborn as sns
+except ImportError:
+    sns = None
+from sklearn.metrics import silhouette_score
 
 
 def grouped_bars(

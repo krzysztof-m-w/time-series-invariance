@@ -25,7 +25,7 @@ for dataset_name in os.listdir("data/datasets"):
     save_path = os.path.join("data/distortions/shift", dataset_name[:-4] + ".npy")
     np.save(save_path, random_shifts)
 
-    random_shrunks = np.random.random(n_shrunks) / 4
+    random_shrunks = np.random.random(n_shrunks) / 4 + 0.75
 
     save_path = os.path.join("data/distortions/shrink", dataset_name[:-4] + ".npy")
     np.save(save_path, random_shrunks)
