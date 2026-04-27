@@ -31,6 +31,7 @@ datasets = [
 def download_sets(data_dir="./data/datasets"):
 
     os.makedirs(data_dir, exist_ok=True)
+    os.makedirs(f"{data_dir}_full", exist_ok=True)
 
     for name in datasets:
         try:
@@ -40,8 +41,12 @@ def download_sets(data_dir="./data/datasets"):
 
             X_merged = np.concatenate([X_train, X_test], axis=0)
             X_merged = X_merged.reshape((X_merged.shape[0], X_merged.shape[2]))
-            X_merged = X_merged[:max_samples]
             y_merged = np.concatenate([y_train, y_test], axis=0)
+            np.savez(
+                os.path.join(f"{data_dir}_full", f"{name}.npz"), X=X_merged, y=y_merged
+            )
+            print(f"Saved full {name} dataset with {X_merged.shape[0]} samples.")
+            X_merged = X_merged[:max_samples]
             y_merged = y_merged[:max_samples]
             np.savez(os.path.join(data_dir, f"{name}.npz"), X=X_merged, y=y_merged)
             print("Done")

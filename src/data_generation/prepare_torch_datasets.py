@@ -2,7 +2,7 @@ import os
 import numpy as np
 import torch
 
-dataset_path = "data/datasets"
+dataset_path = "data/datasets_full"
 torch_dataset_path = "data/torch_datasets"
 
 for dataset_file in os.listdir(dataset_path):
@@ -18,7 +18,10 @@ for dataset_file in os.listdir(dataset_path):
         y = y[indices]
 
         y = y.astype(int)
-        y -= y.min()  # Ensure labels start from 0
+        unique_classes = np.unique(y)
+        y = np.array(
+            [np.where(unique_classes == label)[0][0] for label in y]
+        )  # Re-encode labels to start from 0
         print(y)
 
         # Split into train/val/test (80/10/10)
