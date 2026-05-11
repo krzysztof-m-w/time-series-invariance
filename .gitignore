@@ -5,3 +5,4 @@ data/*
 __pycache__
 notebooks/evaluations/data/*
 notebooks/evaluations/embeddings/*
+notebooks/ts2vec/models/*

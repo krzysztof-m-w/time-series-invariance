@@ -97,7 +97,8 @@ def test_embeddings_quality(embeddings, dataset_name="", ax=None):
     )  # (1,N,D,K)
     mean_cos_sim = np.mean(cos_sim_global, axis=(2, 3))
 
-    sns.heatmap(mean_cos_sim)
+    if sns is not None:
+        sns.heatmap(mean_cos_sim)
     ax[1].set_title("cosine similarity between vector groups")
 
     glob_cos_sim = np.mean(mean_cos_sim)
