@@ -6,3 +6,4 @@ __pycache__
 notebooks/evaluations/data/*
 notebooks/evaluations/embeddings/*
 .venv/*
+notebooks/ts2vec/models/*
